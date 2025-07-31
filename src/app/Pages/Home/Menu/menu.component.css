@@ -1,0 +1,33 @@
+.navbar {
+  background-color: var(--bs-body-tertiary);
+  border-radius:5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0; /* un poco de espacio arriba y abajo */
+}
+
+.navbar .container-fluid {
+  max-width: 960px;       /* limita el ancho */
+  margin-left: auto;
+  margin-right: auto;     /* centra horizontalmente */
+  padding-left: 15px;     /* espacio interno */
+  padding-right: 15px;
+}
+
+.navbar-collapse {
+  justify-content: center; /* centra el menú */
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 1rem;              /* espacio entre ítems */
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+.nav-link.disabled {
+  color: #6c757d;         /* color gris típico para disabled */
+  pointer-events: none;
+  cursor: default;
+}
