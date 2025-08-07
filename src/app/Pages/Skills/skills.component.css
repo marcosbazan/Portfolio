@@ -1,12 +1,31 @@
-.skills-section {
+#skills-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 10vh;
+  min-height: 0vh;
   padding: 0.5rem;
 }
 
-img {
-  width: 5%;
-  height: 5%;
+.skills-card {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.icons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.icons-grid img {
+  width: 85px;
+  height: 85px;
+  transition: transform 0.3s ease;
+}
+
+.icons-grid img:hover {
+  transform: scale(1.1);
 }

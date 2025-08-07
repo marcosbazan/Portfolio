@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProfilesComponent } from "./Pages/Profiles/profiles.component";
-import { MenuComponent } from './Pages/Home/Menu/menu.component';
+import { MenuComponent } from './Pages/Menu/menu.component';
 import { SkillsComponent } from "./Pages/Skills/skills.component";
+import { ExpeciencieComponent } from './Pages/Expeciencie/expeciencie.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ProfilesComponent, MenuComponent, SkillsComponent],
+  imports: [RouterOutlet, ProfilesComponent, MenuComponent, SkillsComponent,ExpeciencieComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
