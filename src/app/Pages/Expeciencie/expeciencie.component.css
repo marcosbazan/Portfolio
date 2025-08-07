@@ -1,34 +1,42 @@
-/* Contenedor principal de la sección de experiencia */
-.experience-section {
+/* Igual estructura y espaciado que skills-section */
+#experience-section {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 75vh;
-  padding: 2rem 1rem;
-  background-color: #f9f9f9; /* Opcional, para dar contraste */
+  padding: 10rem;
+  
 }
 
-/* Tarjeta de experiencia */
 .experience-card {
-  max-width: 800px;
   width: 100%;
-  text-align: left; /* Mejor para leer párrafos */
-  margin: 0 auto;
+  max-width: 960px;
+  padding: 1rem;
+  text-align: left;
 }
 
-/* Título principal */
+/* Estilo del título principal */
 .experience-card h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-/* Título del puesto */
+/* Subtítulos y texto */
+.experience-item {
+  font-size: 1rem;
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.4;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
 .experience-item h3 {
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
-/* Párrafos de contenido */
 .experience-item p {
-  margin-bottom: 0.8rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
 }

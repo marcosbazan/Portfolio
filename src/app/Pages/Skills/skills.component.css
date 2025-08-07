@@ -2,8 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 0vh;
-  padding: 0.5rem;
+  padding: 0 20px 45px;
 }
 
 .skills-card {
@@ -14,18 +13,33 @@
 
 .icons-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.icons-grid img {
-  width: 85px;
-  height: 85px;
+/* Cada grupo (Frontend, Backend, etc.) */
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Aquí se alinean los iconos en fila horizontal */
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap; /* permite que salten de línea si no caben */
+  justify-content: center;
+  gap: 2rem;
+}
+
+.skill-icons img {
+  width: 70px;
+  height: 70px;
   transition: transform 0.3s ease;
 }
 
-.icons-grid img:hover {
+.skill-icons img:hover {
   transform: scale(1.1);
 }
