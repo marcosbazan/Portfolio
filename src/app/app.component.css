@@ -1,0 +1,30 @@
+#experience-learning-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  padding: 0 20px 45px; /* Igual que skills-section */
+  flex-wrap: wrap; /* Responsive */
+}
+
+.experience-learning-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0 20px 45px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Mitad de skills-card */
+  text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #experience-learning-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-learning-card {
+    max-width: 100%;
+  }
+}

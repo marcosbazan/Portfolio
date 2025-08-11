@@ -2,7 +2,7 @@
 #experience-section {
   display: flex;
   justify-content: center;
-  padding: 10rem;
+   padding: 0 20px 45px;
   
 }
 
@@ -15,7 +15,7 @@
 
 /* Estilo del título principal */
 .experience-card h2 {
-  text-align: center;
+  text-align: left;
   font-size: 2rem;
   margin-bottom: 1rem;
 }

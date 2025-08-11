@@ -1,0 +1,65 @@
+/* Estilo general (para encajar en la misma línea que experiencia) */
+#learning-section {
+  width: 100%;
+  max-width: 500px; 
+  text-align: center;
+}
+
+/* Tarjeta con el mismo diseño que skills-card */
+.learning-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 0 20px 45px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Título principal */
+.learning-card h2 {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Contenedor de los estudios */
+.learning-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+/* Cada bloque de estudio */
+.learning-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.learning-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+  #learning-section {
+    max-width: 100%;
+    padding: 1rem 1.5rem; 
+  }
+  
+  .learning-card {
+    padding: 1.5rem 1rem; 
+  }
+
+  .learning-card h2 {
+    font-size: 1.75rem; 
+  }
+
+  .learning-item h3 {
+    font-size: 1.1rem; 
+  }
+
+  .learning-item p {
+    font-size: 0.95rem; 
+  }
+}
