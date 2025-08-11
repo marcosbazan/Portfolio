@@ -1,16 +1,17 @@
 #experience-learning-section {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-  padding: 0 20px 45px; /* Igual que skills-section */
-  flex-wrap: wrap; /* Responsive */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 15rem 20px 45px; /* Más padding arriba para separar de la sección anterior */
+  flex-wrap: wrap;
 }
+
 
 .experience-learning-card {
   background: #fff;
   border-radius: 12px;
-  padding: 0 20px 45px;
+  padding: 2rem; /* Padding interior equilibrado */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px; /* Mitad de skills-card */

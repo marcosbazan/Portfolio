@@ -3,18 +3,15 @@
   width: 100%;
   max-width: 500px; 
   text-align: center;
+  padding: 0 20px 45px;
+  box-sizing: border-box;
 }
 
-/* Tarjeta con el mismo diseño que skills-card */
-.learning-card {
-    background: #ffffff;
-    border-radius: 12px;
+.learning-card {/* Padding consistente dentro de la tarjeta */
+  box-sizing: border-box;
     padding: 0 20px 45px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
 }
 
-/* Título principal */
 .learning-card h2 {
   text-align: left;
   font-size: 2rem;
@@ -38,6 +35,13 @@
 .learning-item p {
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.dates {
+  font-weight: normal;
+  margin-left: 4rem;
+  color: #555; 
+  font-size: 1rem;
 }
 
 /* Responsive para móvil */
