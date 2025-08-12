@@ -1,4 +1,7 @@
-/* Contenedor centrado */
+html {
+  scroll-behavior: smooth;
+}
+
 #main {
   display: flex;
   justify-content: center;
@@ -6,46 +9,43 @@
   box-sizing: border-box;
 }
 
-/* Estilos del nav */
+/* Nav centrado y fijo */
 nav {
-  background-color: #343a40; /* gris oscuro moderno */
+  background-color: #343a40;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  max-width: 167vw;
+  width: fit-content;   /* Ajusta al contenido */
+  margin: 0 auto;       /* Centrado horizontal */
   position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 }
 
-/* Estilos de los enlaces */
 nav a {
   flex: 1 1 auto;
   text-align: center;
   padding: 16px 24px;
   color: #fff;
+  cursor: pointer;
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  background-color: transparent;
 }
 
-/* Hover: efecto de levantarse */
 nav a:hover {
   background-color: #495057;
   transform: translateY(-4px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Bordes redondeados para los extremos */
 nav a:first-child {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-}
-
-nav a:last-child {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
 }

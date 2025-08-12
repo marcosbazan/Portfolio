@@ -1,20 +1,34 @@
+#projects-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 20px 4rem;
+}
+
+#projects-section app-proyects {
+  max-width: 1000px; /* Limitar ancho */
+  width: 100%;
+}
+
 #experience-learning-section {
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
-  padding: 15rem 20px 45px; /* Más padding arriba para separar de la sección anterior */
+  padding: 8rem 20px 45px;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 
 .experience-learning-card {
   background: #fff;
   border-radius: 12px;
-  padding: 2rem; /* Padding interior equilibrado */
+  padding: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 500px; /* Mitad de skills-card */
+  flex: 1 1 450px;          
+  max-width: 500px;
   text-align: left;
 }
 
