@@ -1,94 +1,88 @@
+.proyects-card {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+}
 
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  justify-content: center;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
 
-  .proyects-card {
-    width: 100%;
-    max-width: 1000px;
-    text-align: center;
-  }
+/* Tarjetas de proyecto */
+.proyect-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  margin: 0 auto;
+}
 
-  .proyect-item {
-    background: #fff;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Cambia max-width a width fijo para mejor control */
-    width: 320px; /* o 100% para que el grid decida */
-    text-align: center;
-    transition: transform 0.2s ease;
-    margin: 0 auto; /* para centrar dentro de la celda */
-  }
+.proyect-item:hover {
+  transform: translateY(-5px);
+}
 
+.proyect-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
 
-  .proyect-item:hover {
-    transform: translateY(-5px);
-  }
-
-  .proyect-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-  }
-
-
-  .proyect-link {
-    display: block;
-    margin: 1rem auto 0 auto; /* auto en izquierda y derecha lo centra */
-    width: fit-content;
-  }
-
-
-  .proyect-link:hover {
-    background-color: #005a99;
-  }
-
-
-  /* Sección de Proyectos centrada */
-  #projects-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8rem 20px 4rem;
-    flex-wrap: wrap; /* que pueda ajustarse en pantallas pequeñas */
-  }
-
-  /* Contenedor interno que limita el ancho */
-  #projects-section app-proyects {
-    max-width: 1000px; /* Limitar ancho */
-    width: 100%;
-  }
-
-  /* Contenedor grid para los proyectos */
-  .projects-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem; /* aumenta el espacio */
-    justify-content: center;
-    justify-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-
-  /* Responsive: 1 columna */
-  @media (max-width: 768px) {
-    .projects-container {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .btn-ver-mas {
-  display: inline-block;
-  padding: 0.8rem 2rem;
+.proyect-link {
+  display: block;
+  margin: 1rem auto 0 auto;
+  width: fit-content;
+  padding: 0.5rem 1rem;
   background-color: #007acc;
-  color: white;
+  color: #fff;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
 
-.btn-ver-mas:hover {
+.proyect-link:hover {
   background-color: #005a99;
 }
+
+/* Botón siempre al final de los proyectos */
+  .btn-ver-mas-container {
+    text-align: center;
+    margin-top: 3rem; /* separa del grid de proyectos */
+    grid-column: 1 / -1; /* hace que ocupe todo el ancho si está dentro del grid */
+  }
+
+  /* Botón */
+  .btn-ver-mas {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #007acc;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-ver-mas:hover {
+    background-color: #005a99;
+  }
+
+  /* Responsive: 1 columna en móviles */
+  @media (max-width: 768px) {
+    .projects-container {
+      grid-template-columns: 1fr;
+    }
+  }

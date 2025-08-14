@@ -5,8 +5,14 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-proyects',
   standalone: true,
-  imports: [CommonModule, RouterModule], 
+  imports: [CommonModule, RouterModule],
   templateUrl: './proyects.component.html',
   styleUrls: ['./proyects.component.css']
 })
-export class ProyectsComponent { }
+export class ProyectsComponent {
+  showFullProjects = false;
+
+  toggleFullProjects() {
+    this.showFullProjects = !this.showFullProjects;
+  }
+}
