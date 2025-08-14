@@ -5,7 +5,7 @@ html {
 #main {
   display: flex;
   justify-content: center;
-  padding: 0 20px 45px; 
+  padding: 0 20px 45px;
   box-sizing: border-box;
 }
 
@@ -17,8 +17,8 @@ nav {
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  width: fit-content;   /* Ajusta al contenido */
-  margin: 0 auto;       /* Centrado horizontal */
+  width: fit-content;
+  margin: 0 auto;
   position: fixed;
   top: 10px;
   left: 50%;
@@ -37,6 +37,7 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  white-space: nowrap; /* Evita cortes de texto */
 }
 
 nav a:hover {
@@ -48,4 +49,40 @@ nav a:hover {
 nav a:first-child {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+}
+
+/* 📱 Ajustes responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: nowrap;           /* No saltar de línea */
+    overflow-x: auto;            /* Scroll horizontal si no cabe */
+    width: 100%;
+    border-radius: 0;
+    left: 0;
+    transform: none;
+    top: 0;
+  }
+
+  nav::-webkit-scrollbar {
+    display: none;               /* Oculta scroll visual */
+  }
+
+  nav a {
+    padding: 14px 16px;          /* Botones más compactos */
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;      /* Menú vertical */
+    align-items: stretch;
+    position: static;            /* Fijo puede ser molesto en pantallas muy pequeñas */
+  }
+
+  nav a {
+    border-radius: 0;
+    padding: 12px;
+    font-size: 14px;
+  }
 }

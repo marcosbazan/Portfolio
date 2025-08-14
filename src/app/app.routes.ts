@@ -4,6 +4,7 @@ import { ExpeciencieComponent } from './Pages/Expeciencie/expeciencie.component'
 import { LearningComponent } from './Pages/Learning/learning.component';
 import { ProyectsComponent } from './Pages/Proyects/proyects.component';
 import { SkillsComponent } from './Pages/Skills/skills.component';
+import { ProyectosCompletosComponent } from './Pages/Proyectos-completos/proyectos-completos.component';
 
 
 
@@ -13,6 +14,7 @@ export const routes: Routes = [
     { path: 'experiencia', component: ExpeciencieComponent },
     { path: 'proyectos', component: ProyectsComponent },
     { path: 'formacion', component: LearningComponent },
-    { path: '**', redirectTo: '', pathMatch: 'full' }
+    { path: 'proyectos-completos', component: ProyectosCompletosComponent },
+    { path: '**', redirectTo: '' }
 
 ];

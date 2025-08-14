@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-proyects',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, RouterModule], 
   templateUrl: './proyects.component.html',
-  styleUrl: './proyects.component.css'
+  styleUrls: ['./proyects.component.css']
 })
-export class ProyectsComponent {
-
-}
+export class ProyectsComponent { }

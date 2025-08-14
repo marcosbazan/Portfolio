@@ -84,3 +84,28 @@
   margin: 1rem auto 0.5rem;
   max-width: 600px;
 }
+
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* espacio entre icono y texto */
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover {
+  color: #0078d4; /* azul tipo Outlook */
+}
+
+.email-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor; /* hereda color del enlace */
+}
+
+.email-text {
+  white-space: nowrap; /* evita que se parta el correo en varias líneas */
+}
