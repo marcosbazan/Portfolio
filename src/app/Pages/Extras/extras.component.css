@@ -1,0 +1,13 @@
+#extras-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 45px;
+}
+
+.extras-card {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+

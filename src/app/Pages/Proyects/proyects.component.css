@@ -16,7 +16,6 @@
   width: 100%;
 }
 
-/* Tarjetas de proyecto */
 .proyect-item {
   background: #fff;
   border-radius: 12px;
@@ -56,33 +55,29 @@
   background-color: #005a99;
 }
 
-/* Botón siempre al final de los proyectos */
-  .btn-ver-mas-container {
-    text-align: center;
-    margin-top: 3rem; /* separa del grid de proyectos */
-    grid-column: 1 / -1; /* hace que ocupe todo el ancho si está dentro del grid */
-  }
+.btn-ver-mas-container {
+  text-align: center;
+  margin-top: 3rem;
+}
 
-  /* Botón */
-  .btn-ver-mas {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background-color: #007acc;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  }
+.btn-ver-mas {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #007acc;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
 
-  .btn-ver-mas:hover {
-    background-color: #005a99;
-  }
+.btn-ver-mas:hover {
+  background-color: #005a99;
+}
 
-  /* Responsive: 1 columna en móviles */
-  @media (max-width: 768px) {
-    .projects-container {
-      grid-template-columns: 1fr;
-    }
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
   }
+}
