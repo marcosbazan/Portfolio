@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px 45px;
+  padding: 6rem 1rem 3rem;
 }
 
 .extras-card {
@@ -11,3 +11,59 @@
   text-align: center;
 }
 
+.extras-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.extras-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  flex: 1 1 280px;
+  max-width: 300px;
+  min-height: 200px; /* 🔑 todas las tarjetas tendrán la misma altura mínima */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra el contenido */
+  transition: transform 0.2s ease-in-out;
+}
+
+.extras-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive móvil */
+@media (max-width: 768px) {
+  #extras-section {
+    padding: 4rem 1rem 2rem;
+  }
+
+  .extras-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .extras-item {
+    max-width: 100%;
+    min-height: 160px; /* mismas alturas también en móvil */
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .extras-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .extras-item p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}
