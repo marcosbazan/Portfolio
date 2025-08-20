@@ -1,10 +1,16 @@
 <div id="main">
   <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#tecnologias">Tecnologías</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#formacion">Formación</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#extras">Extras</a>
+    <a href="#inicio">{{ 'MENU.INICIO' | translate }}</a>
+    <a href="#tecnologias">{{ 'MENU.TECNOLOGIAS' | translate }}</a>
+    <a href="#experiencia">{{ 'MENU.EXPERIENCIA' | translate }}</a>
+    <a href="#formacion">{{ 'MENU.FORMACION' | translate }}</a>
+    <a href="#proyectos">{{ 'MENU.PROYECTOS' | translate }}</a>
+    <a href="#extras">{{ 'MENU.EXTRAS' | translate }}</a>
+
+    <!-- Botones de idioma -->
+    <div style="display: inline-block; margin-left: 2rem;">
+      <button (click)="changeLang('es')">ES</button>
+      <button (click)="changeLang('en')">EN</button>
+    </div>
   </nav>
 </div>

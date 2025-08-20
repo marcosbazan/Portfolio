@@ -1,0 +1,17 @@
+{
+  "MENU": {
+    "INICIO": "Home",
+    "TECNOLOGIAS": "Skills",
+    "EXPERIENCIA": "Experience",
+    "FORMACION": "Education",
+    "PROYECTOS": "Projects",
+    "EXTRAS": "Extras"
+  },
+  "FOOTER": {
+    "COPY": "© 2025 Marcos Bazán Fernández · All rights reserved."
+  },
+  "PROYECTOS": {
+    "VER_MAS": "Show more",
+    "VER_MENOS": "Show less"
+  }
+}

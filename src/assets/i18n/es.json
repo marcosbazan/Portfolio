@@ -1,0 +1,17 @@
+{
+  "MENU": {
+    "INICIO": "Inicio",
+    "TECNOLOGIAS": "Tecnologías",
+    "EXPERIENCIA": "Experiencia",
+    "FORMACION": "Formación",
+    "PROYECTOS": "Proyectos",
+    "EXTRAS": "Extras"
+  },
+  "FOOTER": {
+    "COPY": "© 2025 Marcos Bazán Fernández · Todos los derechos reservados."
+  },
+  "PROYECTOS": {
+    "VER_MAS": "Ver más",
+    "VER_MENOS": "Ver menos"
+  }
+}
