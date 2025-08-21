@@ -1,36 +1,44 @@
 <section id="extras-section">
   <div class="extras-card">
-    <h2>Extras</h2>
+    <h2>{{ 'EXTRAS.TITLE' | translate }}</h2>
 
     <div class="extras-list">
+
+      <!-- Intereses -->
       <div class="extras-item">
-        <h3>🎯 Intereses</h3>
-        <p>Me gusta aprender nuevas tecnologías y experimentar con proyectos personales.</p>
+        <h3>🎯 {{ 'EXTRAS.INTERESTS.TITLE' | translate }}</h3>
+        <p>{{ interestsKey | translate }}</p>
       </div>
 
+      <!-- Idiomas -->
       <div class="extras-item">
-        <h3>🌍 Idiomas</h3>
-        <p><strong>Español:</strong> Nativo</p>
-        <p><strong>Inglés:</strong> Nivel intermedio (B2)</p>
+        <h3>🌍 {{ 'EXTRAS.LANGUAGES.TITLE' | translate }}</h3>
+        <p><strong>{{ 'EXTRAS.LANGUAGES.SPANISH' | translate }}:</strong> {{ 'EXTRAS.LANGUAGES.LEVEL.SPANISH' | translate }}</p>
+        <p><strong>{{ 'EXTRAS.LANGUAGES.ENGLISH' | translate }}:</strong> {{ 'EXTRAS.LANGUAGES.LEVEL.ENGLISH' | translate }}</p>
       </div>
 
+      <!-- Hobbies -->
       <div class="extras-item">
-        <h3>💡 Hobbies</h3>
-        <p>Entrenamiento en gimnasio, Ciclismo, Viajar y edición audiovisual con Photoshop/Premiere Pro.</p>
-      </div>
-      <div class="extras-item">
-        <h3>🏆 Reconocimientos</h3>
-        <p>Reconocimiento en mis prácticas por destacar por mi capacidad para aprender rápidamente y mi disposición a asumir nuevos retos.</p>
+        <h3>💡 {{ 'EXTRAS.HOBBIES.TITLE' | translate }}</h3>
+        <p>{{ hobbiesKey | translate }}</p>
       </div>
 
+      <!-- Reconocimientos -->
       <div class="extras-item">
-        <h3>📜 Certificados</h3>
+        <h3>🏆 {{ 'EXTRAS.RECOGNITIONS.TITLE' | translate }}</h3>
+        <p>{{ recognitionsKey | translate }}</p>
+      </div>
+
+      <!-- Certificados -->
+      <div class="extras-item">
+        <h3>📜 {{ 'EXTRAS.CERTIFICATES' | translate }}</h3>
         <ul>
-          <li>English for IT 2 – Cisco</li>
-          <li>Desarrollo de aplicaciones con NodeJs y Express – Openwebinars</li>
-          <li>Fundamentos de  Angular – Openwebinars</li>
+          <li>{{ 'EXTRAS.CERTIFICATES_LIST.0' | translate }}</li>
+          <li>{{ 'EXTRAS.CERTIFICATES_LIST.1' | translate }}</li>
+          <li>{{ 'EXTRAS.CERTIFICATES_LIST.2' | translate }}</li>
         </ul>
       </div>
+
     </div>
   </div>
 </section>

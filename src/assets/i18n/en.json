@@ -7,11 +7,57 @@
     "PROYECTOS": "Projects",
     "EXTRAS": "Extras"
   },
-  "FOOTER": {
-    "COPY": "© 2025 Marcos Bazán Fernández · All rights reserved."
+    "PROFILES":{
+    "TITLE": "Full Stack Developer | IA Developer",
+    "WORK": "Available for work",
+    "ABOUT": "About me",
+    "TEXT_LIST":[ 
+      "Hello, I'm Marcos Bazán, a passionate Full Stack developer with experience in AI and a focus on software engineering. I love creating innovative and efficient solutions that enhance user experience.",
+      "My goal is to continue learning and growing in the field of technology, contributing to projects that make a difference.",
+      "I am available to collaborate on exciting projects!"
+    ],
+    "WEBSITE": "Sitio web"
+
   },
+
   "PROYECTOS": {
     "VER_MAS": "Show more",
     "VER_MENOS": "Show less"
+  },
+  
+  "EXTRAS": {
+    "TITLE": "Extras",
+    "INTERESTS": {
+      "TITLE": "Interests",
+      "TEXT": "I enjoy learning new technologies and experimenting with personal projects."
+    },
+    "LANGUAGES": {
+      "TITLE": "Languages",
+      "SPANISH": "Spanish",
+      "ENGLISH": "English",
+      "LEVEL": {
+        "SPANISH": "Native",
+        "ENGLISH": "Intermediate level (B2)"
+      }
+    },
+    "HOBBIES": {
+      "TITLE": "Hobbies",
+      "TEXT": "Gym training, Cycling, Traveling, and audiovisual editing with Photoshop/Premiere Pro."
+    },
+    "RECOGNITIONS": {
+      "TITLE": "Recognitions",
+      "TEXT": "Recognized during my internship for my ability to learn quickly and my willingness to take on new challenges."
+    },
+    "CERTIFICATES": "Certificates",
+    "CERTIFICATES_LIST": [
+      "English for IT 2 – Cisco",
+      "Application development with NodeJs and Express – Openwebinars",
+      "Fundamentals of Angular – Openwebinars"
+    ]
+  },
+    "FOOTER": {
+    "COPY": "© 2025 Marcos Bazán Fernández · All rights reserved."
   }
 }
+
+

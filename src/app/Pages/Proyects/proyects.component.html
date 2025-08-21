@@ -33,8 +33,9 @@
 
   <!-- Botón siempre al final -->
   <div class="btn-ver-mas-container">
-    <button (click)="toggleFullProjects()" class="btn-ver-mas">
-      {{ showFullProjects ? 'Ver menos' : 'Ver más' }}
-    </button>
-  </div>
+  <button (click)="toggleFullProjects()" class="btn-ver-mas">
+    {{ showFullProjects ? ('PROYECTOS.VER_MENOS' | translate) : ('PROYECTOS.VER_MAS' | translate) }}
+  </button>
+</div>
+
 </div>

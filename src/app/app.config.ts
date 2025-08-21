@@ -1,14 +1,26 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { TranslateModule } from '@ngx-translate/core';
+import { importProvidersFrom } from '@angular/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
 
-export const appConfig: ApplicationConfig = {
+// Loader que usa fetch desde assets/i18n/*.json
+export class BrowserTranslateLoader implements TranslateLoader {
+  getTranslation(lang: string): Observable<any> {
+    return new Observable(subscriber => {
+      fetch(`/assets/i18n/${lang}.json`)
+        .then(res => res.json())
+        .then(json => subscriber.next(json))
+        .catch(() => subscriber.next({}));
+    });
+  }
+}
+
+export const appConfig = {
   providers: [
-    importProvidersFrom([
-      HttpClientModule,
+    importProvidersFrom(
       TranslateModule.forRoot({
         defaultLanguage: 'es',
-      }),
-    ]),
-  ],
+        loader: { provide: TranslateLoader, useClass: BrowserTranslateLoader }
+      })
+    )
+  ]
 };

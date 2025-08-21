@@ -1,41 +1,33 @@
-<body>
-  
+<div id="main-container">
+  <app-menu></app-menu>
 
-  <div id="main-container">
-    <app-menu></app-menu>
+  <section id="inicio">
+    <app-profiles></app-profiles>
+  </section>
 
-    <section id="inicio">
-      <app-profiles></app-profiles>
+  <section id="tecnologias">
+    <app-skills></app-skills>
+  </section>
+
+  <section id="experience-learning-section">
+    <section id="experiencia">
+      <app-expeciencie class="experience-learning-card"></app-expeciencie>
     </section>
 
-    <section id="tecnologias">
-      <app-skills></app-skills>
+    <section id="formacion">
+      <app-learning class="experience-learning-card"></app-learning>
     </section>
-    
-    <section id="experience-learning-section">
-      <section id="experiencia">
-        <app-expeciencie class="experience-learning-card"></app-expeciencie>
-      </section>
+  </section>
 
-      <section id="formacion">
-        <app-learning class="experience-learning-card"></app-learning>
-      </section>
-    </section>
+  <section id="proyectos">
+    <app-proyects></app-proyects>
+  </section>
 
-    <section id="proyectos">
-      <app-proyects></app-proyects>
-    </section>
+  <section id="extras">
+    <app-extras></app-extras>
+  </section>
+</div>
 
-    <section id="extras">
-      <app-extras></app-extras>
-    </section>
-  </div>
-
-  <footer id="footer">
-    <p>© 2025 <strong>Marcos Bazán Fernández</strong> · Todos los derechos reservados.</p>
-  </footer>
-</body>
-<button (click)="changeLang('es')">ES</button>
-<button (click)="changeLang('en')">EN</button>
-
-<h1>{{ 'MENU.TECNOLOGIAS' | translate }}</h1>
+<footer id="footer">
+  <p>© 2025 <strong>Marcos Bazán Fernández</strong> · Todos los derechos reservados.</p>
+</footer>
