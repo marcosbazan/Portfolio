@@ -1,14 +1,26 @@
 <section id="learning-section">
   <div class="learning-card">
-    <h2>Estudios</h2>
+    <h2>{{ 'LEARNING.TITLE' | translate }}</h2>
+
+    <div class="learning-description">
+      <p>{{ 'LEARNING.TEXT_LIST' | translate }}</p>
+    </div>
+
     <div class="learning-item">
       <div class="Cesur">
-        <h3>Cesur <span class="dates">Sep.2022 - Ene.2025</span></h3>
-        <p>Desarrollo de Aplicaciones Multiplataforma.</p>
+        <h3>
+          {{ 'LEARNING.CESUR.TITLE' | translate }}
+          <span class="dates">{{ 'LEARNING.CESUR.DATE' | translate }}</span>
+        </h3>
+        <p>{{ 'LEARNING.CESUR.DESC' | translate }}</p>
       </div>
+      
       <div class="SantaMaria">
-        <h3>Santa Maria de los Apostoles <span class="dates">Sep.2020 - Jun.2022</span></h3>
-        <p>Ciclo formativo en sistemas microinformaticos y redes.</p>
+        <h3>
+          {{ 'LEARNING.SANTAMARIA.TITLE' | translate }}
+          <span class="dates">{{ 'LEARNING.SANTAMARIA.DATE' | translate }}</span>
+        </h3>
+        <p>{{ 'LEARNING.SANTAMARIA.DESC' | translate }}</p>
       </div>
     </div>
   </div>

@@ -15,12 +15,40 @@
       "Hola, soy Marcos Bazán, un apasionado desarrollador Full Stack con experiencia en IA y un enfoque en la ingeniería de software. Me encanta crear soluciones innovadoras y eficientes que mejoren la experiencia del usuario.",
       "Mi objetivo es seguir aprendiendo y creciendo en el campo de la tecnología, contribuyendo a proyectos que marquen la diferencia.",
       "¡Estoy disponible para colaborar en proyectos emocionantes!"
-    ],
-    "WEBSITE": "Sitio web"
+    ]
 
   },
-  
+  "TECNOLOGIAS": {
+    "TITLE": "Tecnologías",
+    "TOOLS": "Herramientas"
+  },
+  "EXPERIENCIA": {
+    "TITLE": "Experiencia",
+    "SUBTITLE":"Desarrollador Full Stack",
+    "TEXT_LIST":[ 
+      "CodeArts Solution (Nov.2024-Feb.2025): Desarrollo de una aplicación de un cliente utilizando Drupal 11 para el frontend y Symfony con PHP para el backend.",
+      "Implementación de funcionalidades como autenticación de usuarios, gestión de datos y despliegue en la nube."
+    ]
+  },
+  "LEARNING": {
+    "TITLE": "Estudios",
+    "TEXT_LIST": [
+      "Actualmente estoy aprendiendo sobre Inteligencia Artificial y Machine Learning, explorando frameworks como TensorFlow y PyTorch para integrar capacidades de IA en aplicaciones web."
+    ],
+    "CESUR": {
+      "TITLE": "Cesur",
+      "DATE": "Sep.2022 - Ene.2025",
+      "DESC": "Desarrollo de Aplicaciones Multiplataforma."
+    },
+    "SANTAMARIA": {
+      "TITLE": "Santa María de los Apóstoles",
+      "DATE": "Sep.2020 - Jun.2022",
+      "DESC": "Ciclo formativo en sistemas microinformáticos y redes."
+    }
+  },
+
   "PROYECTOS": {
+    "TITLE": "Proyectos",
     "VER_MAS": "Ver más",
     "VER_MENOS": "Ver menos"
   },

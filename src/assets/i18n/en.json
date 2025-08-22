@@ -15,12 +15,38 @@
       "Hello, I'm Marcos Bazán, a passionate Full Stack developer with experience in AI and a focus on software engineering. I love creating innovative and efficient solutions that enhance user experience.",
       "My goal is to continue learning and growing in the field of technology, contributing to projects that make a difference.",
       "I am available to collaborate on exciting projects!"
-    ],
-    "WEBSITE": "Sitio web"
+    ]
 
   },
-
+  "TECNOLOGIAS": {
+    "TITLE": "Technologies",
+    "TOOLS": "Tools"
+  },
+  "EXPERIENCIA": {
+    "TITLE": "Experience",
+    "SUBTITLE":"Full Stack Developer",
+    "TEXT_LIST":[ 
+      "Personal Project (2023 - Present): Developing a web application using Angular for the frontend and Node.js with Express for the backend. Implementing features such as user authentication, data management, and cloud deployment."
+    ]
+  },
+  "LEARNING": {
+  "TITLE": "Education",
+  "TEXT_LIST": [
+    "I am currently learning about Artificial Intelligence and Machine Learning, exploring frameworks such as TensorFlow and PyTorch to integrate AI capabilities into web applications."
+  ],
+  "CESUR": {
+    "TITLE": "Cesur",
+    "DATE": "Sep.2022 - Jan.2025",
+    "DESC": "Development of Multiplatform Applications."
+  },
+  "SANTAMARIA": {
+    "TITLE": "Santa María de los Apóstoles",
+    "DATE": "Sep.2020 - Jun.2022",
+    "DESC": "Vocational training in microcomputer systems and networks."
+  }
+  },
   "PROYECTOS": {
+    "TITLE": "Projects",
     "VER_MAS": "Show more",
     "VER_MENOS": "Show less"
   },
