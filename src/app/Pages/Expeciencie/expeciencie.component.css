@@ -2,15 +2,16 @@
 #experience-section {
   display: flex;
   justify-content: center;
-   padding: 0 20px 45px;
-  
+  padding: 0 20px 45px;
 }
 
 /* Estilo del título principal */
 .experience-card h2 {
   text-align: left;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color:w;
 }
 
 /* Subtítulos y texto */
@@ -18,18 +19,43 @@
   font-size: 1rem;
   word-wrap: break-word;
   white-space: normal;
-  line-height: 1.4;
-  margin-top: 0.8rem;
-  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .experience-item h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #111;
 }
 
 .experience-item p {
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
+
+.subtitle-date {
+  display: flex;
+  justify-content: space-between; /* Subtítulo a la izquierda, fecha a la derecha */
+  align-items: center;            /* Centra verticalmente si tienen diferente tamaño de fuente */
+  gap: 1rem;                      /* Espacio entre los elementos */
+  margin-bottom: 0.8rem;
+}
+
+.subtitle-date h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(218, 218, 218);
+}
+
+.subtitle-date strong {
+  font-weight: normal;
+  font-size: 1rem;
+  color: #555;
+  margin-left: 0; /* ya no hace falta margen extra, el gap se encarga del espacio */
+}
+

@@ -22,19 +22,25 @@
     "TITLE": "Tecnologías",
     "TOOLS": "Herramientas"
   },
+
   "EXPERIENCIA": {
     "TITLE": "Experiencia",
-    "SUBTITLE":"Desarrollador Full Stack",
+    "CodeArts-Solution":{
+      "TITLE": "CodeArts Solution",
+    "SUBTITLE": "Desarrollador Full Stack",
+    "DATE": "Nov.2024 - Feb.2025",
     "TEXT_LIST":[ 
-      "CodeArts Solution (Nov.2024-Feb.2025): Desarrollo de una aplicación de un cliente utilizando Drupal 11 para el frontend y Symfony con PHP para el backend.",
+      " Desarrollo de una aplicación utilizando Angular para el frontend y Node.js con Express para el backend.",
+      "Implementación de funcionalidades como autenticación de usuarios, gestión de datos y despliegue en la nube."
+    ]},
+    "TEXT":" | (Nov.2024-Feb.2025):",
+    "TEXT_LIST":[ 
+      " Desarrollo de una aplicación utilizando Drupal 11 para el frontend y Symfony con PHP para el backend.",
       "Implementación de funcionalidades como autenticación de usuarios, gestión de datos y despliegue en la nube."
     ]
   },
   "LEARNING": {
     "TITLE": "Estudios",
-    "TEXT_LIST": [
-      "Actualmente estoy aprendiendo sobre Inteligencia Artificial y Machine Learning, explorando frameworks como TensorFlow y PyTorch para integrar capacidades de IA en aplicaciones web."
-    ],
     "CESUR": {
       "TITLE": "Cesur",
       "DATE": "Sep.2022 - Ene.2025",
@@ -47,11 +53,35 @@
     }
   },
 
-  "PROYECTOS": {
-    "TITLE": "Proyectos",
-    "VER_MAS": "Ver más",
-    "VER_MENOS": "Ver menos"
-  },
+"PROYECTOS": {
+  "TITLE": "Proyectos",
+  "VER_MAS": "Ver más",
+  "VER_MENOS": "Ver menos",
+  "TECNOLOGIAS": "Tecnologías usadas",
+  "LIST": {
+    "0": {
+      "TITLE": "Proyecto 1",
+      "DESC": "Descripción breve del proyecto 1...",
+      "LINK": "Ver en GitHub"
+    },
+    "1": {
+      "TITLE": "Proyecto 2",
+      "DESC": "Descripción breve del proyecto 2...",
+      "LINK": "Ver en GitHub"
+    },
+    "2": {
+      "TITLE": "Proyecto 3",
+      "DESC": "Descripción breve del proyecto 3...",
+      "LINK": "Ver en GitHub"
+    },
+    "3": {
+      "TITLE": "Proyecto 4",
+      "DESC": "Descripción breve del proyecto 4...",
+      "LINK": "Ver en GitHub"
+    }
+  }
+},
+
   
   "EXTRAS": {
     "TITLE": "Extras",

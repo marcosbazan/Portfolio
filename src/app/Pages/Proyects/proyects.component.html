@@ -1,41 +1,54 @@
 <div class="proyects-card">
-  <h2>{{'PROYECTOS.TITLE' | translate}}</h2>
+  <h2>{{ 'PROYECTOS.TITLE' | translate }}</h2>
 
   <!-- Proyectos principales -->
   <div class="projects-container">
-    <div class="proyect-item">
-      <img src="assets/proyectos/proyecto1.jpg" alt="Proyecto 1" class="proyect-image">
-      <h3>Proyecto 1</h3>
-      <p>Descripción breve del proyecto 1...</p>
-      <a href="https://github.com/usuario/proyecto1" target="_blank" class="proyect-link">Ver en GitHub</a>
-    </div>
-    <div class="proyect-item">
-      <img src="assets/proyectos/proyecto2.jpg" alt="Proyecto 2" class="proyect-image">
-      <h3>Proyecto 2</h3>
-      <p>Descripción breve del proyecto 2...</p>
-      <a href="https://github.com/usuario/proyecto2" target="_blank" class="proyect-link">Ver en GitHub</a>
+    <div class="proyect-item" *ngFor="let project of projects.slice(0, 2)">
+      <img [src]="'assets/proyectos/proyecto' + (project.key + 1) + '.jpg'" 
+           [alt]="'PROYECTOS.LIST.' + project.key + '.TITLE' | translate" 
+           class="proyect-image">
+      <h3>{{ 'PROYECTOS.LIST.' + project.key + '.TITLE' | translate }}</h3>
+      <p>{{ 'PROYECTOS.LIST.' + project.key + '.DESC' | translate }}</p>
+      <a [href]="project.link" target="_blank" class="proyect-link">
+        {{ 'PROYECTOS.LIST.' + project.key + '.LINK' | translate }}
+      </a>
+
+      <!-- Tecnologías usadas -->
+      <div class="tech-container">
+        <h4>{{ 'PROYECTOS.TECNOLOGIAS' | translate }}</h4>
+        <div class="tech-icons">
+          <img *ngFor="let tech of project.techs" [src]="tech" alt="Technology icon" class="tech-icon">
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Proyectos extra -->
   <div *ngIf="showFullProjects" class="projects-container" style="margin-top: 2rem;">
-    <div class="proyect-item">
-      <img src="assets/proyectos/proyecto3.jpg" alt="Proyecto 3" class="proyect-image">
-      <h3>Proyecto 3</h3>
-      <p>Descripción breve del proyecto 3...</p>
-    </div>
-    <div class="proyect-item">
-      <img src="assets/proyectos/proyecto4.jpg" alt="Proyecto 4" class="proyect-image">
-      <h3>Proyecto 4</h3>
-      <p>Descripción breve del proyecto 4...</p>
+    <div class="proyect-item" *ngFor="let project of projects.slice(2)">
+      <img [src]="'assets/proyectos/proyecto' + (project.key + 1) + '.jpg'" 
+           [alt]="'PROYECTOS.LIST.' + project.key + '.TITLE' | translate" 
+           class="proyect-image">
+      <h3>{{ 'PROYECTOS.LIST.' + project.key + '.TITLE' | translate }}</h3>
+      <p>{{ 'PROYECTOS.LIST.' + project.key + '.DESC' | translate }}</p>
+      <a [href]="project.link" target="_blank" class="proyect-link">
+        {{ 'PROYECTOS.LIST.' + project.key + '.LINK' | translate }}
+      </a>
+
+      <!-- Tecnologías usadas -->
+      <div class="tech-container">
+        <h4>{{ 'PROYECTOS.TECNOLOGIAS' | translate }}</h4>
+        <div class="tech-icons">
+          <img *ngFor="let tech of project.techs" [src]="tech" alt="Technology icon" class="tech-icon">
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Botón siempre al final -->
   <div class="btn-ver-mas-container">
-  <button (click)="toggleFullProjects()" class="btn-ver-mas">
-    {{ showFullProjects ? ('PROYECTOS.VER_MENOS' | translate) : ('PROYECTOS.VER_MAS' | translate) }}
-  </button>
-</div>
-
+    <button (click)="toggleFullProjects()" class="btn-ver-mas">
+      {{ showFullProjects ? ('PROYECTOS.VER_MENOS' | translate) : ('PROYECTOS.VER_MAS' | translate) }}
+    </button>
+  </div>
 </div>

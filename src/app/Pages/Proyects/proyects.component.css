@@ -81,3 +81,17 @@
     grid-template-columns: 1fr;
   }
 }
+.tech-container {
+  margin-top: 1rem;
+}
+
+.tech-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tech-icon {
+  width: 32px;
+  height: 32px;
+}
