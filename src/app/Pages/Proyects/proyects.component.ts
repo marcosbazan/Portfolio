@@ -15,7 +15,7 @@ export class ProyectsComponent {
   projects = [
   {
     key: 0,
-    link: "https://github.com/usuario/proyecto1",
+    link: "https://github.com/marcos318888/Portafolio",
     techs: [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
@@ -25,7 +25,7 @@ export class ProyectsComponent {
   },
   {
     key: 1,
-    link: "https://github.com/usuario/proyecto2",
+    link: "https://github.com/marcos318888/GaleriaArte",
     techs: [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
@@ -33,7 +33,7 @@ export class ProyectsComponent {
   },
   {
     key: 2,
-    link: "https://github.com/usuario/proyecto3",
+    link: "https://github.com/marcos318888/NOMINATOR",
     techs: [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg"
@@ -41,11 +41,10 @@ export class ProyectsComponent {
   },
   {
     key: 3,
-    link: "https://github.com/usuario/proyecto4",
+    link: "https://github.com/marcos318888/Chatbot",
     techs: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"]
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original-wordmark.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"]
     }]
 
   constructor(private translate: TranslateService) {}

@@ -60,22 +60,22 @@
   "TECNOLOGIAS": "Tecnologías usadas",
   "LIST": {
     "0": {
-      "TITLE": "Proyecto 1",
+      "TITLE": "Portfolio Personal",
       "DESC": "Descripción breve del proyecto 1...",
       "LINK": "Ver en GitHub"
     },
     "1": {
-      "TITLE": "Proyecto 2",
+      "TITLE": "Galería de Arte",
       "DESC": "Descripción breve del proyecto 2...",
       "LINK": "Ver en GitHub"
     },
     "2": {
-      "TITLE": "Proyecto 3",
+      "TITLE": "Nominator",
       "DESC": "Descripción breve del proyecto 3...",
       "LINK": "Ver en GitHub"
     },
     "3": {
-      "TITLE": "Proyecto 4",
+      "TITLE": "Chatbot",
       "DESC": "Descripción breve del proyecto 4...",
       "LINK": "Ver en GitHub"
     }
@@ -87,35 +87,38 @@
     "TITLE": "Extras",
     "INTERESTS": {
       "TITLE": "Intereses",
-      "TEXT": "Me gusta aprender nuevas tecnologías y experimentar con proyectos personales."
+      "TEXT": "Me gusta aprender nuevas tecnologías y experimentar con proyectos personales, explorando diferentes lenguajes, frameworks y herramientas que me permiten mejorar mis habilidades como desarrollador."
     },
-"LANGUAGES": {
-  "TITLE": "Idiomas",
-  "SPANISH": "Español",
-  "ENGLISH": "Inglés",
-  "LEVEL": {
-    "SPANISH": "Nativo",
-    "ENGLISH": "Nivel intermedio (B2)"
-  }
-},
-    "HOBBIES": {
-      "TITLE": "Hobbies",
-      "TEXT": "Entrenamiento en gimnasio, Ciclismo, Viajar y edición audiovisual con Photoshop/Premiere Pro."
-    },
-    "RECOGNITIONS": {
-      "TITLE": "Reconocimientos",
-      "TEXT": "Reconocimiento en mis prácticas por destacar por mi capacidad para aprender rápidamente y mi disposición a asumir nuevos retos."
-    },
-    "CERTIFICATES": "Certificados",
-    "CERTIFICATES_LIST": [
-      "English for IT 2 – Cisco",
-      "Desarrollo de aplicaciones con NodeJs y Express – Openwebinars",
-      "Fundamentos de Angular – Openwebinars"
-    ]
+  "LANGUAGES": {
+    "TITLE": "Idiomas",
+    "SPANISH": "Español",
+    "ENGLISH": "Inglés",
+    "LEVEL": {
+      "SPANISH": "Nativo",
+      "ENGLISH": "Nivel intermedio (B2)"
+    }
   },
+  "EVENTS": "Eventos",
+  "EVENTS_LIST": [
+    "He participado en la DrupalCon 2025 celebrada en Santiago de Compostela.",
+    "He asistido a las jornadas de ciberseguridad CCN-CERT 2024 en Madrid.",
+    "He asistido al t3chfest 2024 en Madrid."
+  ],
+
+  "RECOGNITIONS": {
+    "TITLE": "Reconocimientos",
+    "TEXT": "Reconocimiento en mis prácticas por destacar por mi capacidad para aprender rápidamente y mi disposición a asumir nuevos retos."
+  },
+  "CERTIFICATES": "Certificados",
+  "CERTIFICATES_LIST": [
+    "English for IT 2 – Cisco",
+    "Desarrollo de aplicaciones con NodeJs y Express – Openwebinars",
+    "Fundamentos de Angular – Openwebinars"
+  ]
+  ,
   "FOOTER": {
     "COPY": "© 2025 Marcos Bazán Fernández · Todos los derechos reservados."
-  }
+  }}
 }
 
 

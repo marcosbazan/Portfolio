@@ -49,22 +49,22 @@
   "TECNOLOGIAS": "Technologies used",
   "LIST": {
     "0": {
-      "TITLE": "Project 1",
+      "TITLE": "Personal Portfolio",
       "DESC": "Brief description of project 1...",
       "LINK": "View on GitHub"
     },
     "1": {
-      "TITLE": "Project 2",
+      "TITLE": "Art Gallery",
       "DESC": "Brief description of project 2...",
       "LINK": "View on GitHub"
     },
     "2": {
-      "TITLE": "Project 3",
+      "TITLE": "Nominator",
       "DESC": "Brief description of project 3...",
       "LINK": "View on GitHub"
     },
     "3": {
-      "TITLE": "Project 4",
+      "TITLE": "Chatbot",
       "DESC": "Brief description of project 4...",
       "LINK": "View on GitHub"
     }
@@ -75,7 +75,7 @@
     "TITLE": "Extras",
     "INTERESTS": {
       "TITLE": "Interests",
-      "TEXT": "I enjoy learning new technologies and experimenting with personal projects."
+      "TEXT": "I enjoy learning new technologies and experimenting with personal projects, exploring different programming languages, frameworks, and tools that help me improve my skills as a developer."
     },
     "LANGUAGES": {
       "TITLE": "Languages",
@@ -86,10 +86,12 @@
         "ENGLISH": "Intermediate level (B2)"
       }
     },
-    "HOBBIES": {
-      "TITLE": "Hobbies",
-      "TEXT": "Gym training, Cycling, Traveling, and audiovisual editing with Photoshop/Premiere Pro."
-    },
+    "EVENTS": "Events",
+    "EVENTS_LIST": [
+      "I participated in DrupalCon 2025 held in Santiago de Compostela.",
+      "I attended the CCN-CERT Cybersecurity Conference 2024 in Madrid.",
+      "I attended t3chfest 2024 in Madrid."
+    ],
     "RECOGNITIONS": {
       "TITLE": "Recognitions",
       "TEXT": "Recognized during my internship for my ability to learn quickly and my willingness to take on new challenges."
