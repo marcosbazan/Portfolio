@@ -11,7 +11,7 @@
   font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
-  color:w;
+  color:white;
 }
 
 /* Subtítulos y texto */
@@ -28,14 +28,14 @@
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: #111;
+  color: white;
 }
 
 .experience-item p {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: rgb(247, 244, 244);
 }
 
 .subtitle-date {
@@ -55,7 +55,6 @@
 .subtitle-date strong {
   font-weight: normal;
   font-size: 1rem;
-  color: #555;
+  color:#a19f9f;
   margin-left: 0; /* ya no hace falta margen extra, el gap se encarga del espacio */
 }
-

@@ -4,10 +4,10 @@
   <!-- Proyectos principales -->
   <div class="projects-container">
     <div class="proyect-item" *ngFor="let project of projects.slice(0, 2)">
-      <img [src]="'assets/proyectos/Portfolio.png'" 
+      <img [src]="project.img" 
           [alt]="'PROYECTOS.LIST.' + project.key + '.TITLE' | translate" 
           class="proyect-image"
-          (click)="openImage('assets/proyectos/Portfolio.png')">
+          (click)="openImage(project.img)">
           
       <h3>{{ 'PROYECTOS.LIST.' + project.key + '.TITLE' | translate }}</h3>
       <p>{{ 'PROYECTOS.LIST.' + project.key + '.DESC' | translate }}</p>
@@ -28,9 +28,11 @@
   <!-- Proyectos extra -->
   <div *ngIf="showFullProjects" class="projects-container" style="margin-top: 2rem;">
     <div class="proyect-item" *ngFor="let project of projects.slice(2)">
-      <img [src]="'assets/proyectos/Chatbot.jpg'" 
+      <img [src]="project.img" 
           [alt]="'PROYECTOS.LIST.' + project.key + '.TITLE' | translate" 
-          class="proyect-image">
+          class="proyect-image"
+          (click)="openImage(project.img)">
+      
       <h3>{{ 'PROYECTOS.LIST.' + project.key + '.TITLE' | translate }}</h3>
       <p>{{ 'PROYECTOS.LIST.' + project.key + '.DESC' | translate }}</p>
       <a [href]="project.link" target="_blank" class="proyect-link">
@@ -53,7 +55,8 @@
       {{ showFullProjects ? ('PROYECTOS.VER_MENOS' | translate) : ('PROYECTOS.VER_MAS' | translate) }}
     </button>
   </div>
-   <!-- Modal de zoom -->
+
+  <!-- Modal de zoom -->
   <div class="modal" *ngIf="selectedImage" (click)="closeImage()">
     <img [src]="selectedImage" class="modal-image">
   </div>

@@ -36,4 +36,10 @@ export class ProfilesComponent implements OnInit {
       localStorage.setItem('lang', lang);
     }
   }
+  getCvPath(): string {
+  return this.selectedLang === 'en'
+    ? 'assets/MarcosBazanFernandez_En.pdf'
+    : 'assets/MarcosBazanFernandez_Es.pdf';
+}
+
 }

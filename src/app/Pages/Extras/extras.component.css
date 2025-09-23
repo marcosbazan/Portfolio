@@ -9,6 +9,7 @@
   width: 100%;
   max-width: 1000px;
   text-align: center;
+  color: white;
 }
 
 .extras-list {
@@ -20,7 +21,7 @@
 }
 
 .extras-item {
-  background: #fff;
+  background: #424442;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -33,6 +34,11 @@
   justify-content: center; /* centra el contenido */
   transition: transform 0.2s ease-in-out;
 }
+.extras-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
 
 .extras-item:hover {
   transform: translateY(-5px);

@@ -28,6 +28,7 @@ export class ProyectsComponent {
   {
     key: 1,
     link: "https://github.com/marcos318888/Gestion-Biblioteca",
+    img: "assets/proyectos/Biblioteca.jpg",
     techs: [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
@@ -37,6 +38,7 @@ export class ProyectsComponent {
   {
     key: 2,
     link: "https://github.com/marcos318888/NOMINATOR",
+    img: "assets/proyectos/Portfolio.png",
     techs: [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
@@ -50,7 +52,7 @@ export class ProyectsComponent {
     techs: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original-wordmark.svg"
       ]
-    }]
+    }];
 
   constructor(private translate: TranslateService) {}
 

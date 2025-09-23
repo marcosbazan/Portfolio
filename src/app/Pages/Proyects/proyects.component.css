@@ -3,6 +3,7 @@
   max-width: 1000px;
   text-align: center;
   margin: 0 auto;
+  color: white;
 }
 
 .projects-container {
@@ -17,7 +18,7 @@
 }
 
 .proyect-item {
-  background: #fff;
+  background: #424442;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
