@@ -30,15 +30,10 @@
     "SUBTITLE": "Desarrollador Full Stack",
     "DATE": "Nov.2024 - Feb.2025",
     "TEXT_LIST":[ 
-      " Desarrollo de una aplicación utilizando Angular para el frontend y Node.js con Express para el backend.",
-      "Implementación de funcionalidades como autenticación de usuarios, gestión de datos y despliegue en la nube."
-    ]},
-    "TEXT":" | (Nov.2024-Feb.2025):",
-    "TEXT_LIST":[ 
       " Desarrollo de una aplicación utilizando Drupal 11 para el frontend y Symfony con PHP para el backend.",
-      "Implementación de funcionalidades como autenticación de usuarios, gestión de datos y despliegue en la nube."
+      "Implementación de funcionalidades como autenticación de usuarios, gestión de datos, creacion y personalización de módulos, temas y rutas."
     ]
-  },
+  }},
   "LEARNING": {
     "TITLE": "Estudios",
     "CESUR": {
@@ -61,22 +56,22 @@
   "LIST": {
     "0": {
       "TITLE": "Portfolio Personal",
-      "DESC": "Descripción breve del proyecto 1...",
+      "DESC": "Portfolio personal explicando lo aprendido y mi trayectoria profesional como desarrollador ademas de mis proyectos personales y cosas extras.",
       "LINK": "Ver en GitHub"
     },
     "1": {
-      "TITLE": "Galería de Arte",
-      "DESC": "Descripción breve del proyecto 2...",
+      "TITLE": "Biblioteca",
+      "DESC": "Una aplicación desarrollada en Java con Spring Boot destinada a gestionar el sistema de una biblioteca: préstamos, libros, usuarios, etc... y con una base de datos PostgreSQL.",
       "LINK": "Ver en GitHub"
     },
     "2": {
       "TITLE": "Nominator",
-      "DESC": "Descripción breve del proyecto 3...",
+      "DESC": "Aplicación de escritorio en Python para la gestión de nóminas, altas/bajas y generación de informes en formato pdf, con interfaz gráfica desarrollada en Tkinter y almacenamiento de datos en SQLite.",
       "LINK": "Ver en GitHub"
     },
     "3": {
       "TITLE": "Chatbot",
-      "DESC": "Descripción breve del proyecto 4...",
+      "DESC": "El chatbot funciona detectando palabras clave en las entradas del usuario y respondiendo en base a ellas. Puede servir como base para implementar técnicas más avanzadas de procesamiento del lenguaje natural (NLP) o integrarse con modelos más complejos.",
       "LINK": "Ver en GitHub"
     }
   }

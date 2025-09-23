@@ -50,22 +50,22 @@
   "LIST": {
     "0": {
       "TITLE": "Personal Portfolio",
-      "DESC": "Brief description of project 1...",
+      "DESC": "Personal portfolio explaining what I've learned and my professional journey as a developer, along with my personal projects and additional information.",
       "LINK": "View on GitHub"
     },
     "1": {
-      "TITLE": "Art Gallery",
-      "DESC": "Brief description of project 2...",
+      "TITLE": "Library",
+      "DESC": "An application developed in Java with Spring Boot aimed at managing a library system: loans, books, users, etc., with a PostgreSQL database.",
       "LINK": "View on GitHub"
     },
     "2": {
       "TITLE": "Nominator",
-      "DESC": "Brief description of project 3...",
+      "DESC": "A desktop application in Python for payroll management, employee onboarding/offboarding, and PDF report generation, with a graphical interface developed in Tkinter and data storage in SQLite.",
       "LINK": "View on GitHub"
     },
     "3": {
       "TITLE": "Chatbot",
-      "DESC": "Brief description of project 4...",
+      "DESC": "The chatbot works by detecting keywords in user inputs and responding based on them. It can serve as a foundation for implementing more advanced natural language processing (NLP) techniques or integrating with more complex models.",
       "LINK": "View on GitHub"
     }
   }
