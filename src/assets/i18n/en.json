@@ -22,13 +22,18 @@
     "TITLE": "Technologies",
     "TOOLS": "Tools"
   },
+
   "EXPERIENCIA": {
     "TITLE": "Experience",
-    "SUBTITLE":"Full Stack Developer",
-    "TEXT_LIST":[ 
-      "Personal Project (2023 - Present): Developing a web application using Angular for the frontend and Node.js with Express for the backend. Implementing features such as user authentication, data management, and cloud deployment."
+    "CodeArts-Solution":{
+      "TITLE": "CodeArts Solution",
+      "SUBTITLE":"Full Stack Developer",
+      "DATE": "Nov.2024 - Feb.2025",
+      "TEXT_LIST":[ 
+      " Developed an application using Drupal 11 for the frontend and Symfony with PHP for the backend.",
+      "Implemented features such as user authentication, data management, creation and customization of modules, themes, and routes."
     ]
-  },
+  }},
   "LEARNING": {
   "TITLE": "Education",
   "CESUR": {

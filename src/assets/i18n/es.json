@@ -27,12 +27,12 @@
     "TITLE": "Experiencia",
     "CodeArts-Solution":{
       "TITLE": "CodeArts Solution",
-    "SUBTITLE": "Desarrollador Full Stack",
-    "DATE": "Nov.2024 - Feb.2025",
-    "TEXT_LIST":[ 
+      "SUBTITLE": "Desarrollador Full Stack",
+      "DATE": "Nov.2024 - Feb.2025",
+      "TEXT_LIST":[ 
       " Desarrollo de una aplicación utilizando Drupal 11 para el frontend y Symfony con PHP para el backend.",
       "Implementación de funcionalidades como autenticación de usuarios, gestión de datos, creacion y personalización de módulos, temas y rutas."
-    ]
+      ]
   }},
   "LEARNING": {
     "TITLE": "Estudios",
