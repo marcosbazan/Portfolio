@@ -38,7 +38,7 @@ export class ProyectsComponent {
   {
     key: 2,
     link: "https://github.com/marcos318888/NOMINATOR",
-    img: "assets/proyectos/Portfolio.png",
+    img: "assets/proyectos/Nominas.png",
     techs: [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
