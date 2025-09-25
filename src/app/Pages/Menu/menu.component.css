@@ -1,22 +1,11 @@
-html {
-  scroll-behavior: smooth;
-}
-
-#main {
-  display: flex;
-  justify-content: center;
-  padding: 0 20px 45px;
-  box-sizing: border-box;
-}
-
-/* Nav centrado y fijo */
 nav {
   background-color:  #424442;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;  /* <- evita que los elementos salten de línea */
+  align-items: center; /* <- centra verticalmente */
   width: fit-content;
   margin: 0 auto;
   position: fixed;
@@ -26,98 +15,21 @@ nav {
   z-index: 1000;
 }
 
-nav a {
-  flex: 1 1 auto;
-  text-align: center;
-  padding: 16px 24px;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  white-space: nowrap; /* Evita cortes de texto */
+/* Contenedor para los enlaces y botones juntos */
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* separa enlaces y botones */
 }
 
-nav a:hover {
-  background-color: #495057;
-  transform: translateY(-4px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-nav a:first-child {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-
-/* 📱 Ajustes responsive */
+/* Ajustes responsive */
 @media (max-width: 768px) {
   nav {
-    flex-wrap: nowrap;           /* No saltar de línea */
-    overflow-x: auto;            /* Scroll horizontal si no cabe */
+    overflow-x: auto;
     width: 100%;
     border-radius: 0;
     left: 0;
     transform: none;
     top: 0;
   }
-
-  nav::-webkit-scrollbar {
-    display: none;               /* Oculta scroll visual */
-  }
-
-  nav a {
-    padding: 14px 16px;          /* Botones más compactos */
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  nav {
-    flex-direction: column;      /* Menú vertical */
-    align-items: stretch;
-    position: static;            /* Fijo puede ser molesto en pantallas muy pequeñas */
-  }
-
-  nav a {
-    border-radius: 0;
-    padding: 12px;
-    font-size: 14px;
-  }
-}
-
-/* Contenedor para los botones de idioma */
-.lang-buttons {
-  display: flex;
-  gap: 10px;
-  padding: 10px;
-  align-items: center;
-}
-
-/* Estilo base de los botones */
-.lang-buttons button {
-  background: linear-gradient(135deg, #007bff, #00d4ff);
-  color: #fff;
-  font-weight: 700;
-  border: none;
-  border-radius: 25px;
-  padding: 8px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Efecto hover */
-.lang-buttons button:hover {
-  background: linear-gradient(135deg, #00d4ff, #007bff);
-  transform: scale(1.1);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-}
-
-
-.lang-buttons button.active {
-  background: linear-gradient(135deg, #28a745, #34e89e);
-  box-shadow: 0 6px 14px rgba(40, 167, 69, 0.5);
 }
