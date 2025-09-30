@@ -1,123 +1,111 @@
-html {
-  scroll-behavior: smooth;
-}
-
-#main {
-  display: flex;
-  justify-content: center;
-  padding: 0 20px 45px;
-  box-sizing: border-box;
-}
-
-/* Nav centrado y fijo */
 nav {
-  background-color:  #424442;
+  background-color: #424442;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-wrap: nowrap;        
+  gap: 6px;
   width: fit-content;
+  max-width: 95vw;          
   margin: 0 auto;
   position: fixed;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
+  padding: 6px 12px;
+  overflow-x: auto;        
 }
 
+nav::-webkit-scrollbar {
+  display: none;            
+}
+nav {
+  scrollbar-width: none;   
+}
+
+/* Links */
 nav a {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   text-align: center;
-  padding: 16px 24px;
+  padding: 10px 14px;
   color: #fff;
   cursor: pointer;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;          
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  white-space: nowrap; /* Evita cortes de texto */
+  white-space: nowrap;
 }
 
 nav a:hover {
   background-color: #495057;
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-nav a:first-child {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-
-/* 📱 Ajustes responsive */
-@media (max-width: 768px) {
-  nav {
-    flex-wrap: nowrap;           /* No saltar de línea */
-    overflow-x: auto;            /* Scroll horizontal si no cabe */
-    width: 100%;
-    border-radius: 0;
-    left: 0;
-    transform: none;
-    top: 0;
-  }
-
-  nav::-webkit-scrollbar {
-    display: none;               /* Oculta scroll visual */
-  }
-
-  nav a {
-    padding: 14px 16px;          /* Botones más compactos */
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  nav {
-    flex-direction: column;      /* Menú vertical */
-    align-items: stretch;
-    position: static;            /* Fijo puede ser molesto en pantallas muy pequeñas */
-  }
-
-  nav a {
-    border-radius: 0;
-    padding: 12px;
-    font-size: 14px;
-  }
-}
-
-/* Contenedor para los botones de idioma */
+/* Contenedor de botones idioma */
 .lang-buttons {
   display: flex;
-  gap: 10px;
-  padding: 10px;
+  gap: 6px;
   align-items: center;
+  flex: 0 0 auto;
 }
 
-/* Estilo base de los botones */
+/* Botones idioma */
 .lang-buttons button {
   background: linear-gradient(135deg, #007bff, #00d4ff);
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
   border: none;
-  border-radius: 25px;
-  padding: 8px 16px;
-  font-size: 14px;
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 11px;          
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;       
 }
 
-/* Efecto hover */
 .lang-buttons button:hover {
   background: linear-gradient(135deg, #00d4ff, #007bff);
-  transform: scale(1.1);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
 }
-
 
 .lang-buttons button.active {
   background: linear-gradient(135deg, #28a745, #34e89e);
-  box-shadow: 0 6px 14px rgba(40, 167, 69, 0.5);
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    position: static;
+    transform: none;
+    width: 100%;
+    border-radius: 0;
+    overflow-x: visible;
+  }
+
+  nav a {
+    flex: 1 1 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .lang-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .lang-buttons button {
+    font-size: 13px;
+    padding: 8px 14px;
+    width: 100%;            
+    max-width: 200px;        
+  }
 }
