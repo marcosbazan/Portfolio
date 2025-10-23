@@ -3,14 +3,14 @@
 
   <!-- Proyectos -->
   <div class="projects-container">
-    <div class="proyect-item" *ngFor="let project of projects">
+    <div class="proyect-item" 
+         *ngFor="let project of (showFullProjects ? projects : projects.slice(0, 2))">
       
-      <!-- Imagen: si es array, se muestra la primera -->
+      <!-- Imagen (soporta array o string) -->
       <img [src]="getFirstImage(project.img)"
-     [alt]="'PROYECTOS.LIST.' + project.key + '.TITLE' | translate"
-     class="proyect-image"
-     (click)="openProjectImage(project.img)">
-
+           [alt]="'PROYECTOS.LIST.' + project.key + '.TITLE' | translate"
+           class="proyect-image"
+           (click)="openProjectImage(project.img)">
 
       <!-- Contenido -->
       <h3>{{ 'PROYECTOS.LIST.' + project.key + '.TITLE' | translate }}</h3>
