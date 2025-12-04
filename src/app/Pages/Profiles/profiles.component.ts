@@ -1,8 +1,8 @@
-import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AvatarComponent } from './Avatar/avatar.component';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-
+import { AvatarComponent } from './Avatar/avatar.component';
+import { LanguageService } from '../../language.service';
 @Component({
   selector: 'app-profiles',
   standalone: true,
@@ -12,34 +12,41 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class ProfilesComponent implements OnInit {
   selectedLang = 'es';
-  isBrowser: boolean;
+  cvPath = '';
 
   constructor(
     public translate: TranslateService,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-  }
+    private langService: LanguageService
+  ) {}
 
   ngOnInit() {
-    if (this.isBrowser) {
-      const savedLang = localStorage.getItem('lang');
-      if (savedLang) this.selectedLang = savedLang;
-    }
-    this.translate.use(this.selectedLang);
+    // Inicializa idioma desde localStorage
+    const savedLang = localStorage.getItem('lang') || 'es';
+    this.langService.setLang(savedLang);
+
+    // Suscribirse a cambios globales de idioma
+    this.langService.lang$.subscribe(lang => {
+      this.applyLanguage(lang);
+    });
   }
 
-  changeLang(lang: string) {
+  openCv() {
+    if (!this.cvPath) return;
+    window.open(this.cvPath, '_blank');
+  }
+
+  private applyLanguage(lang: string) {
     this.selectedLang = lang;
-    this.translate.use(lang);
-    if (this.isBrowser) {
-      localStorage.setItem('lang', lang);
-    }
-  }
-  getCvPath(): string {
-  return this.selectedLang === 'en'
-    ? 'assets/MarcosBazanFernandez_En.pdf'
-    : 'assets/MarcosBazanFernandez_Es.pdf';
-}
 
+    // Actualiza traducciones en tiempo real
+    this.translate.setDefaultLang(lang);
+    this.translate.use(lang).subscribe(() => {
+      // Actualiza CV según idioma
+      this.cvPath = lang === 'en'
+        ? 'assets/MarcosBazanFernandez_Ing.pdf'
+        : 'assets/MarcosBazanFernandez_Es.pdf';
+    });
+
+    localStorage.setItem('lang', lang);
+  }
 }

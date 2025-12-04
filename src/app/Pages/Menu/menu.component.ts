@@ -2,6 +2,7 @@ import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
+import { LanguageService } from '../../language.service';
 
 @Component({
   selector: 'app-menu',
@@ -16,24 +17,26 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
+    private langService: LanguageService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   ngOnInit() {
-    if (this.isBrowser) {
-      const savedLang = localStorage.getItem('lang');
-      if (savedLang) this.selectedLang = savedLang;
-      this.translate.use(this.selectedLang);
-    } else {
-      this.translate.use('es');
-    }
+    // Inicializa idioma desde localStorage
+    const savedLang = localStorage.getItem('lang') || 'es';
+    this.langService.setLang(savedLang);
+
+    // Suscribirse a cambios globales de idioma
+    this.langService.lang$.subscribe(lang => {
+      this.selectedLang = lang;
+      this.translate.use(lang);
+    });
   }
 
   changeLang(lang: string) {
-    this.selectedLang = lang;
-    this.translate.use(lang);
+    this.langService.setLang(lang); // dispara el cambio global
     if (this.isBrowser) {
       localStorage.setItem('lang', lang);
     }
