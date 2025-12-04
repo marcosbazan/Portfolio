@@ -9,8 +9,9 @@
 
 
     <div class="lang-buttons">
-      <button type="button" (click)="changeLang('es')">ES</button>
-      <button type="button" (click)="changeLang('en')">EN</button>
-    </div>
+  <button (click)="changeLang('es')" [class.active]="selectedLang === 'es'">ES</button>
+  <button (click)="changeLang('en')" [class.active]="selectedLang === 'en'">EN</button>
+</div>
+
   </nav>
 </div>

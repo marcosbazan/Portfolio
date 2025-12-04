@@ -75,7 +75,7 @@ nav a:hover {
 }
 
 .lang-buttons button.active {
-  background: linear-gradient(135deg, #28a745, #34e89e);
+  background: linear-gradient(135deg, #2835a7, #3440e8);
 }
 
 @media (max-width: 768px) {

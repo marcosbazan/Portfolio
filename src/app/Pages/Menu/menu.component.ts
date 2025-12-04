@@ -36,9 +36,11 @@ export class MenuComponent implements OnInit {
   }
 
   changeLang(lang: string) {
-    this.langService.setLang(lang); // dispara el cambio global
-    if (this.isBrowser) {
-      localStorage.setItem('lang', lang);
-    }
+  this.langService.setLang(lang); // cambia idioma global
+  this.selectedLang = lang;       // <-- esto es clave para el botón activo
+  if (this.isBrowser) {
+    localStorage.setItem('lang', lang);
   }
+}
+
 }
