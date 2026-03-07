@@ -9,9 +9,9 @@
     ]
   },
   "files": [
-    "src/main.ts"
+    "Frontend/src/main.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "Frontend/src/**/*.d.ts"
   ]
 }
