@@ -9,7 +9,7 @@
     ]
   },
   "files": [
-    "Frontend/src/main.ts"
+    "src/main.ts"
   ],
   "include": [
     "Frontend/src/**/*.d.ts"

@@ -1,17 +1,10 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { BrowserTranslateLoader } from './browser-translate-loader';
+import { provideHttpClient } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
 
-export const appConfig: ApplicationConfig = {
+export const appConfig = {
   providers: [
-    importProvidersFrom(
-      TranslateModule.forRoot({
-        defaultLanguage: 'es',
-        loader: {
-          provide: TranslateLoader,
-          useClass: BrowserTranslateLoader
-        }
-      })
-    )
+    provideHttpClient(),       // <<< 👈 agrega esto
+    provideRouter(routes),
   ]
 };
