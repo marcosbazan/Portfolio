@@ -4,7 +4,7 @@ import { routes } from './app.routes';
 
 export const appConfig = {
   providers: [
-    provideHttpClient(),       // <<< 👈 agrega esto
+    provideHttpClient(),
     provideRouter(routes),
   ]
 };
