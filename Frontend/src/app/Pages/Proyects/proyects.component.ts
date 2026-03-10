@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
-
+import {ApiService, Project} from '../../../../services/api';
 @Component({
   selector: 'app-proyects',
   standalone: true,
@@ -10,64 +10,32 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
   templateUrl: './proyects.component.html',
   styleUrls: ['./proyects.component.css']
 })
-export class ProyectsComponent {
+export class ProyectsComponent implements OnInit {
   showFullProjects = false;
   selectedImage: string | null = null;
   carouselImages: string[] = [];
   currentCarouselIndex = 0;
+  projects: Project[] = [];
 
-  projects = [
-    {
-      key: 0,
-      link: "https://github.com/marcos318888/Portafolio",
-      img: "assets/proyectos/Portfolio.png",
-      techs: [
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-      ]
-    },
-    {
-      key: 1,
-      link: "https://github.com/marcos318888/Gestion-Biblioteca",
-      img: "assets/proyectos/Biblioteca.jpg",
-      techs: [
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
-      ]
-    },
-    {
-      key: 2,
-      link: "https://github.com/marcos318888/NOMINATOR",
-      img: [
-        "assets/proyectos/Nominas.png",
-        "assets/proyectos/Pantalla-Altas.png",
-        "assets/proyectos/Pantalla-Bajas.png",
-        "assets/proyectos/Pantalla-Informes.png",
-        "assets/proyectos/Pantalla-Nominas.png",
-        "assets/proyectos/Pantalla-NominasDatos.png"
-      ],
-      techs: [
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
-      ]
-    },
-    {
-      key: 3,
-      link: "https://github.com/marcos318888/Chatbot",
-      img: "assets/proyectos/Chatbot.jpg",
-      techs: [
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original-wordmark.svg"
-      ]
-    }
-  ];
+  constructor(
+    private translate: TranslateService,
+    private apiService: ApiService
+  ) {}
 
-  constructor(private translate: TranslateService) {}
+  ngOnInit() {
+    this.loadProjects();
+  }
+
+  loadProjects() {
+    this.apiService.getProjects().subscribe({
+      next: (data) => {
+        this.projects = data;
+      },
+      error: (error) => {
+        console.error('Error loading projects:', error);
+      }
+    });
+  }
 
   toggleFullProjects() {
     this.showFullProjects = !this.showFullProjects;
