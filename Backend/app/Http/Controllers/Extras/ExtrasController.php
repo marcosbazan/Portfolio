@@ -12,48 +12,34 @@ class ExtrasController extends Controller
     public function index()
     {
         return [
-            [
-                "category" => "Certificaciones",
-                "items" => [
-                    [
-                        "name" => "AWS Certified Developer",
-                        "institution" => "Amazon Web Services",
-                        "year" => "2023",
-                        "credential" => "DVA-C002"
-                    ],
-                    [
-                        "name" => "Google Cloud Professional",
-                        "institution" => "Google Cloud",
-                        "year" => "2022",
-                        "credential" => "Cloud Developer"
-                    ]
+            "INTERESTS" => [
+                "TITLE" => "Intereses",
+                "TEXT" => "Me gusta aprender nuevas tecnologías y experimentar con proyectos personales, explorando diferentes lenguajes, frameworks y herramientas que me permiten mejorar mis habilidades como desarrollador."
+            ],
+            "LANGUAGES" => [
+                "TITLE" => "Idiomas",
+                "SPANISH" => "Español",
+                "ENGLISH" => "Inglés",
+                "LEVEL" => [
+                    "SPANISH" => "Nativo",
+                    "ENGLISH" => "Nivel intermedio (B2)"
                 ]
             ],
-            [
-                "category" => "Idiomas",
-                "items" => [
-                    [
-                        "language" => "Español",
-                        "level" => "Nativo"
-                    ],
-                    [
-                        "language" => "Inglés",
-                        "level" => "C1 Advanced"
-                    ],
-                    [
-                        "language" => "Francés",
-                        "level" => "B1 Intermediate"
-                    ]
-                ]
+            "EVENTS" => "Eventos",
+            "EVENTS_LIST" => [
+                "He participado en la DrupalCon 2025 celebrada en Santiago de Compostela.",
+                "He asistido a las jornadas de ciberseguridad CCN-CERT 2024 en Madrid.",
+                "He asistido al t3chfest 2024 en Madrid."
             ],
-            [
-                "category" => "Intereses",
-                "items" => [
-                    "Contribución a Open Source",
-                    "Desarrollo de Videojuegos",
-                    "Inteligencia Artificial",
-                    "Ciberseguridad"
-                ]
+            "RECOGNITIONS" => [
+                "TITLE" => "Reconocimientos",
+                "TEXT" => "Reconocimiento en mis prácticas por destacar por mi capacidad para aprender rápidamente y mi disposición a asumir nuevos retos."
+            ],
+            "CERTIFICATES" => "Certificados",
+            "CERTIFICATES_LIST" => [
+                "English for IT 2 – Cisco",
+                "Desarrollo de aplicaciones con NodeJs y Express – Openwebinars",
+                "Fundamentos de Angular – Openwebinars"
             ]
         ];
     }

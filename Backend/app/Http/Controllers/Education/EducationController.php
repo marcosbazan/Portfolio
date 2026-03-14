@@ -13,25 +13,18 @@ class EducationController extends Controller
     {
         return [
             [
-                "id" => 1,
-                "degree" => "Ingeniería Informática",
-                "institution" => "Universidad Politécnica",
-                "period" => "2018 - 2022",
-                "description" => "Especialización en Desarrollo de Software",
-                "achievements" => [
-                    "Matrícula de Honor",
-                    "Proyecto Final Sobresaliente"
-                ]
+                "id" => 0,
+                "institution" => "Cesur",
+                "degree" => "Desarrollo de Aplicaciones Multiplataforma",
+                "period" => "Sep.2022 - Ene.2025",
+                "description" => "Desarrollo de Aplicaciones Multiplataforma."
             ],
             [
-                "id" => 2,
-                "degree" => "Curso Full Stack Development",
-                "institution" => "Coding Academy",
-                "period" => "2021",
-                "description" => "Intensivo de desarrollo web moderno",
-                "technologies" => [
-                    "React", "Node.js", "MongoDB", "AWS"
-                ]
+                "id" => 1,
+                "institution" => "Santa María de los Apóstoles",
+                "degree" => "Ciclo formativo en sistemas microinformáticos y redes",
+                "period" => "Sep.2020 - Jun.2022",
+                "description" => "Ciclo formativo en sistemas microinformáticos y redes."
             ]
         ];
     }
