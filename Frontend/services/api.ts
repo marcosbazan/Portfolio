@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 export interface Skill {
   category: string;
@@ -9,10 +10,10 @@ export interface Skill {
 
 export interface Experience {
   id: number;
-  title: string;
+  position: string;
   company: string;
   period: string;
-  description: string;
+  description: string[];
   technologies: string[];
 }
 export interface Project {
@@ -32,12 +33,27 @@ export interface Education {
 }
 
 export interface Extra {
-  id: number;
-  title: string;
-  description: string;
-  type: string;
-  url?: string;
-  technologies?: string[];
+  INTERESTS: {
+    TITLE: string;
+    TEXT: string;
+  };
+  LANGUAGES: {
+    TITLE: string;
+    SPANISH: string;
+    ENGLISH: string;
+    LEVEL: {
+      SPANISH: string;
+      ENGLISH: string;
+    };
+  };
+  EVENTS: string;
+  EVENTS_LIST: string[];
+  RECOGNITIONS: {
+    TITLE: string;
+    TEXT: string;
+  };
+  CERTIFICATES: string;
+  CERTIFICATES_LIST: string[];
 }
 
 
@@ -48,26 +64,34 @@ export interface Extra {
 export class ApiService {
   private baseUrl = 'http://127.0.0.1:8000';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private translate: TranslateService) {}
+
+  private getHeaders(): HttpHeaders {
+    return new HttpHeaders({
+      'Accept-Language': this.translate.currentLang || 'es'
+    });
+  }
+
+  setLanguage(lang: string) {}
 
   getSkills(): Observable<Skill[]> {
-    return this.http.get<Skill[]>(`${this.baseUrl}/skills`);
+    return this.http.get<Skill[]>(`${this.baseUrl}/skills`, { headers: this.getHeaders() });
   }
 
   getExperience(): Observable<Experience[]> {
-    return this.http.get<Experience[]>(`${this.baseUrl}/experience`);
+    return this.http.get<Experience[]>(`${this.baseUrl}/experience`, { headers: this.getHeaders() });
   }
 
   getEducation(): Observable<Education[]> {
-    return this.http.get<Education[]>(`${this.baseUrl}/education`);
+    return this.http.get<Education[]>(`${this.baseUrl}/education`, { headers: this.getHeaders() });
   }
 
   getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${this.baseUrl}/projects`);
+    return this.http.get<Project[]>(`${this.baseUrl}/projects`, { headers: this.getHeaders() });
   }
 
 
-  getExtras(): Observable<Extra[]> {
-    return this.http.get<Extra[]>(`${this.baseUrl}/extras`);
+  getExtras(): Observable<Extra> {
+    return this.http.get<Extra>(`${this.baseUrl}/extras`, { headers: this.getHeaders() });
   }
 }

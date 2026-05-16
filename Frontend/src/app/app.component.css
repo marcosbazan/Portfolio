@@ -17,24 +17,12 @@ body {
 }
 
 #experience-learning-section {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 2rem;
-  padding: 8rem 20px 45px;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-}
-
-
-#experience-learning-section {
-  width: 100%; /* antes estaba 100vw */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 8rem 20px 45px;
+  gap: 4rem;
+  padding: 6rem 20px 45px;
   flex-wrap: wrap;
   box-sizing: border-box;
 }

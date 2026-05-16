@@ -2,7 +2,7 @@
   <div class="skills-card">
     <h2>{{'TECNOLOGIAS.TITLE'| translate}}</h2>
     <div class="icons-grid">
-      <div class="skill-group" *ngFor="let skillGroup of skills">
+      <div class="skill-group" *ngFor="let skillGroup of $skills | async">
         <h3>{{ skillGroup.category }}</h3>
         <div class="skill-icons">
           <img *ngFor="let icon of skillGroup.icons" [src]="icon" [alt]="skillGroup.category" />

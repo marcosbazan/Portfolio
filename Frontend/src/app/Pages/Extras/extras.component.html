@@ -2,44 +2,40 @@
   <div class="extras-card">
     <h2>{{ 'EXTRAS.TITLE' | translate }}</h2>
 
-    <div class="extras-list">
+    <div *ngIf="$extras | async as extras" class="extras-list">
 
       <!-- Intereses -->
       <div class="extras-item">
-        <h3>🎯 {{ 'EXTRAS.INTERESTS.TITLE' | translate }}</h3>
-        <p>{{ interestsKey | translate }}</p>
+        <h3>🎯 {{ extras.INTERESTS.TITLE }}</h3>
+        <p>{{ extras.INTERESTS.TEXT }}</p>
       </div>
 
       <!-- Idiomas -->
       <div class="extras-item">
-        <h3>🌍 {{ 'EXTRAS.LANGUAGES.TITLE' | translate }}</h3>
-        <p><strong>{{ 'EXTRAS.LANGUAGES.SPANISH' | translate }}:</strong> {{ 'EXTRAS.LANGUAGES.LEVEL.SPANISH' | translate }}</p>
-        <p><strong>{{ 'EXTRAS.LANGUAGES.ENGLISH' | translate }}:</strong> {{ 'EXTRAS.LANGUAGES.LEVEL.ENGLISH' | translate }}</p>
+        <h3>🌍 {{ extras.LANGUAGES.TITLE }}</h3>
+        <p><strong>{{ extras.LANGUAGES.SPANISH }}:</strong> {{ extras.LANGUAGES.LEVEL.SPANISH }}</p>
+        <p><strong>{{ extras.LANGUAGES.ENGLISH }}:</strong> {{ extras.LANGUAGES.LEVEL.ENGLISH }}</p>
       </div>
 
       <!-- EVENTOS -->
       <div class="extras-item">
-        <h3>🎉 {{ 'EXTRAS.EVENTS' | translate }}</h3>
-          <ul>
-          <li>{{ 'EXTRAS.EVENTS_LIST.0' | translate }}</li>
-          <li>{{ 'EXTRAS.EVENTS_LIST.1' | translate }}</li>
-          <li>{{ 'EXTRAS.EVENTS_LIST.2' | translate }}</li>
+        <h3>🎉 {{ extras.EVENTS }}</h3>
+        <ul>
+          <li *ngFor="let event of extras.EVENTS_LIST">{{ event }}</li>
         </ul>
       </div>
 
       <!-- Reconocimientos -->
       <div class="extras-item">
-        <h3>🏆 {{ 'EXTRAS.RECOGNITIONS.TITLE' | translate }}</h3>
-        <p>{{ recognitionsKey | translate }}</p>
+        <h3>🏆 {{ extras.RECOGNITIONS.TITLE }}</h3>
+        <p>{{ extras.RECOGNITIONS.TEXT }}</p>
       </div>
 
       <!-- Certificados -->
       <div class="extras-item">
-        <h3>📜 {{ 'EXTRAS.CERTIFICATES' | translate }}</h3>
+        <h3>📜 {{ extras.CERTIFICATES }}</h3>
         <ul>
-          <li>{{ 'EXTRAS.CERTIFICATES_LIST.0' | translate }}</li>
-          <li>{{ 'EXTRAS.CERTIFICATES_LIST.1' | translate }}</li>
-          <li>{{ 'EXTRAS.CERTIFICATES_LIST.2' | translate }}</li>
+          <li *ngFor="let cert of extras.CERTIFICATES_LIST">{{ cert }}</li>
         </ul>
       </div>
 

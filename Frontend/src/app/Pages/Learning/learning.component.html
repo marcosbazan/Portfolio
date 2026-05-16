@@ -2,22 +2,13 @@
   <div class="learning-card">
     <h2>{{ 'LEARNING.TITLE' | translate }}</h2>
 
-
-    <div class="learning-item">
-      <div class="Cesur">
+    <div *ngFor="let edu of $education | async" class="learning-item">
+      <div class="education-item">
         <h3>
-          {{ 'LEARNING.CESUR.TITLE' | translate }}
-          <span class="dates">{{ 'LEARNING.CESUR.DATE' | translate }}</span>
+          {{ edu.institution }}
+          <span class="dates">{{ edu.period }}</span>
         </h3>
-        <p>{{ 'LEARNING.CESUR.DESC' | translate }}</p>
-      </div>
-      
-      <div class="SantaMaria">
-        <h3>
-          {{ 'LEARNING.SANTAMARIA.TITLE' | translate }}
-          <span class="dates">{{ 'LEARNING.SANTAMARIA.DATE' | translate }}</span>
-        </h3>
-        <p>{{ 'LEARNING.SANTAMARIA.DESC' | translate }}</p>
+        <p>{{ edu.degree }}</p>
       </div>
     </div>
   </div>

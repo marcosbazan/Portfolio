@@ -2,16 +2,19 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { ApiService, Skill } from '../../../services/api';
+import { ApiService, Skill } from '../../../../services/api';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-skills',
+  standalone: true,
   imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css'
 })
 export class SkillsComponent implements OnInit {
-  skills: Skill[] = [];
+  showFullProjects = false;
+  $skills: Observable<Skill[]> = new Observable();
 
   constructor(
     private translate: TranslateService,
@@ -19,18 +22,7 @@ export class SkillsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loadSkills();
-  }
-
-  loadSkills() {
-    this.apiService.getSkills().subscribe({
-      next: (data) => {
-        this.skills = data;
-      },
-      error: (error) => {
-        console.error('Error loading skills:', error);
-      }
-    });
+    this.$skills = this.apiService.getSkills();
   }
 
   toggleFullProjects() {

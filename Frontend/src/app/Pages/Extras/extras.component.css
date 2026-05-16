@@ -25,13 +25,12 @@
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  flex: 1 1 280px;
-  max-width: 300px;
-  min-height: 200px; /* 🔑 todas las tarjetas tendrán la misma altura mínima */
+  flex: 1 1 300px;
+  max-width: 450px;
   text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centra el contenido */
+  justify-content: flex-start; /* alineado arriba */
   transition: transform 0.2s ease-in-out;
 }
 .extras-item h3 {

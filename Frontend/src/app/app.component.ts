@@ -29,7 +29,6 @@ export class AppComponent {
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('es');
 
-    // Solo navegador
     if (typeof window !== 'undefined' && window.localStorage) {
       const savedLang = localStorage.getItem('lang');
       if (savedLang) {

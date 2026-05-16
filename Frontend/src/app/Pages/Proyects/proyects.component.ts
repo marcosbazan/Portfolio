@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import {ApiService, Project} from '../../../../services/api';
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-proyects',
   standalone: true,
@@ -10,12 +12,13 @@ import {ApiService, Project} from '../../../../services/api';
   templateUrl: './proyects.component.html',
   styleUrls: ['./proyects.component.css']
 })
-export class ProyectsComponent implements OnInit {
+export class ProyectsComponent implements OnInit, OnDestroy {
   showFullProjects = false;
   selectedImage: string | null = null;
   carouselImages: string[] = [];
   currentCarouselIndex = 0;
   projects: Project[] = [];
+  private langChangeSubscription?: Subscription;
 
   constructor(
     private translate: TranslateService,
@@ -24,6 +27,17 @@ export class ProyectsComponent implements OnInit {
 
   ngOnInit() {
     this.loadProjects();
+
+    // Recargar cuando el idioma cambie
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
+      this.loadProjects();
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
   }
 
   loadProjects() {

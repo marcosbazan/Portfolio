@@ -1,21 +1,51 @@
-import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core'; //  Importa TranslateModule
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { ApiService, Extra } from '../../../../services/api';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-extras',
-  standalone: true, 
-  imports: [TranslateModule], // Habilita el pipe translate
+  standalone: true,
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './extras.component.html',
   styleUrls: ['./extras.component.css']
 })
-export class ExtrasComponent {
-  interestsKey = 'EXTRAS.INTERESTS.TEXT';
-  recognitionsKey = 'EXTRAS.RECOGNITIONS.TEXT';
-  
-  languages = [
-    { langKey: 'EXTRAS.LANGUAGES.SPANISH', levelKey: 'EXTRAS.LANGUAGES.LEVEL.SPANISH' },
-    { langKey: 'EXTRAS.LANGUAGES.ENGLISH', levelKey: 'EXTRAS.LANGUAGES.LEVEL.ENGLISH' }
-  ];
+export class ExtrasComponent implements OnInit, OnDestroy {
+  showFullProjects = false;
+  $extras: Observable<Extra> = new Observable();
+  private langChangeSubscription?: Subscription;
 
+  constructor(
+    private translate: TranslateService,
+    private apiService: ApiService
+  ) {}
 
+  ngOnInit() {
+    this.loadExtras();
+
+    // Recargar cuando el idioma cambie
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
+      this.loadExtras();
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
+  }
+
+  loadExtras() {
+    this.$extras = this.apiService.getExtras();
+  }
+
+  toggleFullProjects() {
+    this.showFullProjects = !this.showFullProjects;
+  }
+
+  changeLang(language: string) {
+    this.translate.use(language);
+  }
 }

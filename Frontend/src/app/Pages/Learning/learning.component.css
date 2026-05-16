@@ -1,8 +1,8 @@
 #learning-section {
   width: 100%;
-  max-width: 500px; 
+  max-width: 600px;
   text-align: center;
-  padding: 0 20px 45px;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -42,7 +42,7 @@
 .dates {
   font-weight: normal;
   margin-left: 4rem;
-  color: #a19f9f; 
+  color: #a19f9f;
   font-size: 1rem;
 }
 
@@ -50,22 +50,22 @@
 @media (max-width: 768px) {
   #learning-section {
     max-width: 100%;
-    padding: 1rem 1.5rem; 
+    padding: 1rem 1.5rem;
   }
-  
+
   .learning-card {
-    padding: 1.5rem 1rem; 
+    padding: 1.5rem 1rem;
   }
 
   .learning-card h2 {
-    font-size: 1.75rem; 
+    font-size: 1.75rem;
   }
 
   .learning-item h3 {
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
   }
 
   .learning-item p {
-    font-size: 0.95rem; 
+    font-size: 0.95rem;
   }
 }

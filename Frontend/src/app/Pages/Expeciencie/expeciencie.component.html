@@ -1,17 +1,19 @@
 <section id="experience-section">
   <div class="experience-card">
     <h2>{{'EXPERIENCIA.TITLE' | translate}}</h2>
-    <div class="experience-item">
-      <h3>{{'EXPERIENCIA.CodeArts-Solution.TITLE' | translate}}</h3>
-      
+    <div *ngFor="let exp of $experiences | async" class="experience-item">
+      <h3>{{ exp.position }}</h3>
+
       <!-- Contenedor para fecha y subtítulo en la misma línea -->
       <div class="subtitle-date">
-        <h5>{{'EXPERIENCIA.CodeArts-Solution.SUBTITLE' | translate}}</h5>
-        <strong>{{'EXPERIENCIA.CodeArts-Solution.DATE' | translate}}</strong>
+        <h5>{{ exp.company }}</h5>
+        <strong>{{ exp.period }}</strong>
       </div>
 
-      <p>{{'EXPERIENCIA.CodeArts-Solution.TEXT_LIST.0' | translate}}</p>
-      <p>{{'EXPERIENCIA.CodeArts-Solution.TEXT_LIST.1' | translate}}</p>
+      <p *ngFor="let desc of exp.description">{{ desc }}</p>
+      <div class="technologies">
+        <span *ngFor="let tech of exp.technologies" class="tech-tag">{{ tech }}</span>
+      </div>
     </div>
   </div>
 </section>
