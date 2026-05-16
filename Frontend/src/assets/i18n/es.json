@@ -8,10 +8,10 @@
     "EXTRAS": "Extras"
   },
   "PROFILES":{
-    "TITLE": "Desarrollador Full Stack | IA Developer",
-    "WORK": "Disponible para trabajar",
+    "TITLE": "Desarrollador Full Stack | IA Developer | DevOps",
+    "WORK": "",
     "ABOUT": "Sobre mí",
-    "TEXT_LIST":[ 
+    "TEXT_LIST":[
       "Hola, soy Marcos Bazán, un apasionado desarrollador Full Stack con experiencia en IA y un enfoque en la ingeniería de software. Me encanta crear soluciones innovadoras y eficientes que mejoren la experiencia del usuario.",
       "Mi objetivo es seguir aprendiendo y creciendo en el campo de la tecnología, contribuyendo a proyectos que marquen la diferencia.",
       "¡Estoy disponible para colaborar en proyectos emocionantes!"
@@ -29,7 +29,7 @@
       "TITLE": "CodeArts Solution",
       "SUBTITLE": "Desarrollador Full Stack",
       "DATE": "Nov.2024 - Feb.2025",
-      "TEXT_LIST":[ 
+      "TEXT_LIST":[
       " Desarrollo de una aplicación utilizando Drupal 11 para el frontend y Symfony con PHP para el backend.",
       "Implementación de funcionalidades como autenticación de usuarios, gestión de datos, creacion y personalización de módulos, temas y rutas."
       ]
@@ -55,21 +55,26 @@
   "TECNOLOGIAS": "Tecnologías usadas",
   "LIST": {
     "0": {
+      "TITLE": "Web Iprprevencion",
+      "DESC": "Plataforma web en Laravel para gestión de riesgos laborales. Incluye área privada, verificación de certificados y catálogo de cursos vía API REST. Desarrollado con arquitectura limpia, (Repositories/Actions) y tests automatizados.",
+      "LINK": "Ver en Web"
+          },
+    "1": {
       "TITLE": "Portfolio Personal",
       "DESC": "Portfolio personal explicando lo aprendido y mi trayectoria profesional como desarrollador ademas de mis proyectos personales y cosas extras.",
       "LINK": "Ver en GitHub"
     },
-    "1": {
+    "2": {
       "TITLE": "Biblioteca",
       "DESC": "Una aplicación desarrollada en Java con Spring Boot destinada a gestionar el sistema de una biblioteca: préstamos, libros, usuarios, etc... y con una base de datos PostgreSQL.",
       "LINK": "Ver en GitHub"
     },
-    "2": {
+    "3": {
       "TITLE": "Nominator",
       "DESC": "Aplicación de escritorio en Python para la gestión de nóminas, altas/bajas y generación de informes en formato pdf, con interfaz gráfica desarrollada en Tkinter y almacenamiento de datos en SQLite.",
       "LINK": "Ver en GitHub"
     },
-    "3": {
+    "4": {
       "TITLE": "Chatbot",
       "DESC": "El chatbot funciona detectando palabras clave en las entradas del usuario y respondiendo en base a ellas. Puede servir como base para implementar técnicas más avanzadas de procesamiento del lenguaje natural (NLP) o integrarse con modelos más complejos.",
       "LINK": "Ver en GitHub"
@@ -77,7 +82,7 @@
   }
 },
 
-  
+
   "EXTRAS": {
     "TITLE": "Extras",
     "INTERESTS": {
