@@ -3,14 +3,18 @@
 namespace App\Http\Controllers\Skills;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class SkillController extends Controller
 {
     /**
      * Get all skills grouped by category
      */
-    public function index()
+    public function index(Request $request)
     {
+        $lang = $request->header('Accept-Language', 'es');
+        $isEn = str_contains($lang, 'en');
+
         return [
             [
                 "category" => "Frontend",
@@ -34,7 +38,7 @@ class SkillController extends Controller
                 ]
             ],
             [
-                "category" => "Database",
+                "category" => $isEn ? "Database" : "Base de datos",
                 "icons" => [
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
@@ -42,7 +46,7 @@ class SkillController extends Controller
                 ]
             ],
             [
-                "category" => "Tools",
+                "category" => $isEn ? "Tools" : "Herramientas",
                 "icons" => [
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
@@ -50,7 +54,6 @@ class SkillController extends Controller
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original-wordmark.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/anaconda/anaconda-original.svg",
-                    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/phpstorm/phpstorm-original.svg"
                 ]
             ]
         ];

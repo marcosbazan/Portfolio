@@ -3,14 +3,51 @@
 namespace App\Http\Controllers\Extras;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class ExtrasController extends Controller
 {
     /**
      * Get extra activities and interests
      */
-    public function index()
+    public function index(Request $request)
     {
+        $lang = $request->header('Accept-Language', 'es');
+
+        if (str_contains($lang, 'en')) {
+            return [
+                "INTERESTS" => [
+                    "TITLE" => "Interests",
+                    "TEXT" => "I enjoy learning new technologies and experimenting with personal projects, exploring different programming languages, frameworks, and tools that help me improve my skills as a developer."
+                ],
+                "LANGUAGES" => [
+                    "TITLE" => "Languages",
+                    "SPANISH" => "Spanish",
+                    "ENGLISH" => "English",
+                    "LEVEL" => [
+                        "SPANISH" => "Native",
+                        "ENGLISH" => "Intermediate level (B2)"
+                    ]
+                ],
+                "EVENTS" => "Events",
+                "EVENTS_LIST" => [
+                    "I participated in DrupalCon 2025 held in Santiago de Compostela.",
+                    "I attended the CCN-CERT Cybersecurity Conference 2024 in Madrid.",
+                    "I attended t3chfest 2024 in Madrid."
+                ],
+                "RECOGNITIONS" => [
+                    "TITLE" => "Recognitions",
+                    "TEXT" => "Recognized during my internship for my ability to learn quickly and my willingness to take on new challenges."
+                ],
+                "CERTIFICATES" => "Certificates",
+                "CERTIFICATES_LIST" => [
+                    "English for IT 2 – Cisco",
+                    "Application development with NodeJs and Express – Openwebinars",
+                    "Fundamentals of Angular – Openwebinars"
+                ]
+            ];
+        }
+
         return [
             "INTERESTS" => [
                 "TITLE" => "Intereses",

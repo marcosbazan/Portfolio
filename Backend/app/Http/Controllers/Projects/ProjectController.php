@@ -3,19 +3,21 @@
 namespace App\Http\Controllers\Projects;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
     /**
      * Get all projects
      */
-    public function index()
+    public function index(Request $request)
     {
+
         return [
             [
                 "key" => 0,
-                "link" => "https://github.com/marcos318888/Gestion-Biblioteca",
-                "img" => "assets/proyectos/Biblioteca.jpg",
+                "link" => "https://web.iprprevencion.es/",
+                "img" => "assets/proyectos/web_iprprevencion.png",
                 "techs" => [
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
@@ -30,6 +32,8 @@ class ProjectController extends Controller
                 "link" => "https://github.com/marcos318888/Portafolio",
                 "img" => "assets/proyectos/Portfolio.png",
                 "techs" => [
+                    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+                    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
