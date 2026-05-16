@@ -50,6 +50,7 @@ class SkillController extends Controller
                 "icons" => [
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+                    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
                     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original-wordmark.svg",
