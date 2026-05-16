@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs'; // 👈 Añadido "of" para simular respuestas
 import { TranslateService } from '@ngx-translate/core';
+import {environment} from '../src/environments/environment.development';
 
 export interface Skill {
   category: string;
@@ -16,6 +17,7 @@ export interface Experience {
   description: string[];
   technologies: string[];
 }
+
 export interface Project {
   key: number;
   link: string;
@@ -56,13 +58,11 @@ export interface Extra {
   CERTIFICATES_LIST: string[];
 }
 
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'http://127.0.0.1:8000';
+  private baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient, private translate: TranslateService) {}
 
@@ -75,23 +75,58 @@ export class ApiService {
   setLanguage(lang: string) {}
 
   getSkills(): Observable<Skill[]> {
+    if (!this.baseUrl) {
+      // Datos simulados para Netlify
+      return of([
+        { category: 'Frontend', icons: ['fab fa-angular', 'fab fa-js', 'fab fa-css3-alt'] },
+        { category: 'Backend', icons: ['fab fa-laravel', 'fab fa-php'] }
+      ]);
+    }
     return this.http.get<Skill[]>(`${this.baseUrl}/skills`, { headers: this.getHeaders() });
   }
 
   getExperience(): Observable<Experience[]> {
+    if (!this.baseUrl) {
+      return of([]); // Devuelve array vacío o rellénalo con tus experiencias simuladas si quieres
+    }
     return this.http.get<Experience[]>(`${this.baseUrl}/experience`, { headers: this.getHeaders() });
   }
 
   getEducation(): Observable<Education[]> {
+    if (!this.baseUrl) {
+      return of([]);
+    }
     return this.http.get<Education[]>(`${this.baseUrl}/education`, { headers: this.getHeaders() });
   }
 
   getProjects(): Observable<Project[]> {
+    if (!this.baseUrl) {
+      // 👈 ¡Tu nuevo proyecto IPR Prevención para que luzca en Netlify!
+      return of([
+        {
+          key: 1,
+          link: 'https://github.com/marcosbazan/Portfolio', // Cambia por el link correcto si quieres
+          img: 'assets/images/ipr.png', // Tu imagen guardada en Frontend/src/assets/images/ipr.png
+          techs: ['Angular', 'Bootstrap', 'Laravel']
+        }
+      ]);
+    }
     return this.http.get<Project[]>(`${this.baseUrl}/projects`, { headers: this.getHeaders() });
   }
 
-
   getExtras(): Observable<Extra> {
+    if (!this.baseUrl) {
+      // Estructura simulada con los campos requeridos por tu interfaz Extra
+      return of({
+        INTERESTS: { TITLE: '', TEXT: '' },
+        LANGUAGES: { TITLE: '', SPANISH: '', ENGLISH: '', LEVEL: { SPANISH: '', ENGLISH: '' } },
+        EVENTS: '',
+        EVENTS_LIST: [],
+        RECOGNITIONS: { TITLE: '', TEXT: '' },
+        CERTIFICATES: '',
+        CERTIFICATES_LIST: []
+      });
+    }
     return this.http.get<Extra>(`${this.baseUrl}/extras`, { headers: this.getHeaders() });
   }
 }
