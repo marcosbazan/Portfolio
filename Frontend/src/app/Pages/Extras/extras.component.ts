@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ApiService } from '../../../../services/api';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-extras',
@@ -14,7 +14,10 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class ExtrasComponent implements OnInit, OnDestroy {
   showFullProjects = false;
-  $extras: any = {};
+
+  // 1º Declaramos "extras" como any para que el HTML pueda leer .INTERESTS, .LANGUAGES, etc.
+  extras: any;
+
   private langChangeSubscription?: Subscription;
 
   constructor(
@@ -37,8 +40,16 @@ export class ExtrasComponent implements OnInit, OnDestroy {
     }
   }
 
+  // 2º Nos suscribimos al servicio para desempaquetar el objeto directo de Laravel
   loadExtras() {
-    this.$extras = this.apiService.getExtras();
+    this.apiService.getExtras().subscribe({
+      next: (data) => {
+        this.extras = data;
+      },
+      error: (error) => {
+        console.error('Error loading extras:', error);
+      }
+    });
   }
 
   toggleFullProjects() {
