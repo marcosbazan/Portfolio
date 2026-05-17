@@ -18,7 +18,7 @@ export class ProyectsComponent implements OnInit, OnDestroy {
   selectedImage: string | null = null;
   carouselImages: string[] = [];
   currentCarouselIndex = 0;
-  projects: ProyectsComponent[] = [];
+  projects: any= [];
   private langChangeSubscription?: Subscription;
 
   constructor(
