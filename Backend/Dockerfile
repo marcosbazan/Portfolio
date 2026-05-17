@@ -4,21 +4,24 @@ FROM php:8.2-fpm-alpine
 RUN apk add --no-cache nginx supervisor curl libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql
 
-# Configurar directorio de trabajo
+# 1º Nos situamos en la raíz del contenedor
 WORKDIR /var/www/html
 
-# 1º COPIAMOS LOS ARCHIVOS (Para que Composer pueda ver el composer.json)
+# 2º Copiamos TODO el monorepo (Frontend y Backend)
 COPY . .
 
-# 2º INSTALAMOS COMPOSER Y LAS DEPENDENCIAS
+# 3º ¡EL TRUCO! Nos movemos dentro de la carpeta backend antes de ejecutar Laravel
+WORKDIR /var/www/html/backend
+
+# 4º Ahora Composer SÍ encontrará el composer.json en este directorio
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer install --no-dev --optimize-autoloader
 
-# Configurar permisos para Laravel
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+# Configurar permisos para Laravel en la ruta correcta
+RUN chown -R www-data:www-data /var/www/html/backend/storage /var/www/html/backend/bootstrap/cache
 
 # Puerto que usa Render
 EXPOSE 80
 
-# Comando de arranque definitivo
+# Comando de arranque apuntando a la carpeta correcta
 CMD php artisan serve --host=0.0.0.0 --port=80
