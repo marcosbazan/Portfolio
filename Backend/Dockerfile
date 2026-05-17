@@ -6,9 +6,11 @@ RUN apk add --no-cache nginx supervisor curl libpq-dev \
 
 # Configurar directorio de trabajo
 WORKDIR /var/www/html
+
+# 1º COPIAMOS LOS ARCHIVOS (Para que Composer pueda ver el composer.json)
 COPY . .
 
-# Instalar Composer
+# 2º INSTALAMOS COMPOSER Y LAS DEPENDENCIAS
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer install --no-dev --optimize-autoloader
 
