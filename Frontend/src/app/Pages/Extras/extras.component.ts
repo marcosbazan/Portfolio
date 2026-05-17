@@ -14,7 +14,7 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class ExtrasComponent implements OnInit, OnDestroy {
   showFullProjects = false;
-  $extras: Observable<any[]> = new Observable();
+  $extras: any = {};
   private langChangeSubscription?: Subscription;
 
   constructor(
