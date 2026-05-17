@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { ApiService, Skill } from '../../../../services/api';
+import { ApiService } from '../../../../services/api';
+
 import { Observable } from 'rxjs';
 
 @Component({
@@ -14,7 +15,7 @@ import { Observable } from 'rxjs';
 })
 export class SkillsComponent implements OnInit {
   showFullProjects = false;
-  $skills: Observable<Skill[]> = new Observable();
+  $skills: Observable<any[]> = new Observable();
 
   constructor(
     private translate: TranslateService,

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { ApiService, Extra } from '../../../../services/api';
+import { ApiService } from '../../../../services/api';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
@@ -14,7 +14,7 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class ExtrasComponent implements OnInit, OnDestroy {
   showFullProjects = false;
-  $extras: Observable<Extra> = new Observable();
+  $extras: Observable<any[]> = new Observable();
   private langChangeSubscription?: Subscription;
 
   constructor(
