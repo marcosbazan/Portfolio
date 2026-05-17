@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { ApiService, Education } from '../../../../services/api';
+import { ApiService} from '../../../../services/api';
+
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
@@ -14,7 +15,7 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class LearningComponent implements OnInit, OnDestroy {
   showFullProjects = false;
-  $education: Observable<Education[]> = new Observable();
+  $education: Observable<any[]> = new Observable();
   private langChangeSubscription?: Subscription;
 
   constructor(

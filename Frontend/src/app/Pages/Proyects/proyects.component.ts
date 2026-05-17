@@ -2,7 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
-import {ApiService, Project} from '../../../../services/api';
+import { ApiService } from '../../../../services/api';
+
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -17,7 +18,7 @@ export class ProyectsComponent implements OnInit, OnDestroy {
   selectedImage: string | null = null;
   carouselImages: string[] = [];
   currentCarouselIndex = 0;
-  projects: Project[] = [];
+  projects: ProyectsComponent[] = [];
   private langChangeSubscription?: Subscription;
 
   constructor(
@@ -93,18 +94,18 @@ export class ProyectsComponent implements OnInit, OnDestroy {
     if (this.carouselImages.length === 0) return;
     this.currentCarouselIndex = (this.currentCarouselIndex + 1) % this.carouselImages.length;
   }
+
   // Devuelve la primera imagen si es array, o la imagen misma si es string
-getFirstImage(img: string | string[]): string {
-  return Array.isArray(img) ? img[0] : img;
-}
-
-// Determina si se hace zoom o carrusel
-openProjectImage(img: string | string[]) {
-  if (Array.isArray(img)) {
-    this.openCarousel(img);
-  } else {
-    this.openImage(img);
+  getFirstImage(img: string | string[]): string {
+    return Array.isArray(img) ? img[0] : img;
   }
-}
 
+  // Determina si se hace zoom o carrusel
+  openProjectImage(img: string | string[]) {
+    if (Array.isArray(img)) {
+      this.openCarousel(img);
+    } else {
+      this.openImage(img);
+    }
+  }
 }

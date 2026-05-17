@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import {environment} from '../src/environments/environment.development';
 
-
 @Injectable({
   providedIn: 'root'
 })
