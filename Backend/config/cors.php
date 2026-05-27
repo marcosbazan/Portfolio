@@ -19,8 +19,10 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
-
+    'allowed_origins' => [
+        'https://d2ku2gj092si1i.cloudfront.net',
+        // ... si tienes otros orígenes déjalos ahí
+    ],
     'allowed_origins_patterns' => [],
 
     'allowed_headers' => ['*'],
