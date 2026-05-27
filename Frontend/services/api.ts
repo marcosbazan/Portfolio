@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import {environment} from '../src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   // Olvídate de IPs fijas, usamos la variable global
-  private baseUrl = 'https://portfolio-28qg.onrender.com/api'; // 👈 ¡ASÍ SÍ!
+  private baseUrl = environment.apiUrl;
   constructor(private http: HttpClient, private translate: TranslateService) {}
 
   private getHeaders(): HttpHeaders {
