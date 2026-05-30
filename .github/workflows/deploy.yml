@@ -37,41 +37,27 @@ jobs:
             port: 22
             script: |
               cd /var/www/portfolio-backend
+                      sudo git config --global --add safe.directory /var/www/portfolio-backend
+                      sudo git fetch origin master
+                      sudo git reset --hard origin/master
+                      sudo git pull origin master
 
-              # 1. Desbloquear Git y traer los cambios reales de master
-              sudo git config --global --add safe.directory /var/www/portfolio-backend
-              sudo git fetch origin master
-              sudo git reset --hard origin/master
-              sudo git pull origin master
+                      # 2. COPIAR CONTROLADORES NUEVOS A LA RAZÓ REAL (¡Esto es la clave!)
+                      sudo cp -r /var/www/portfolio-backend/Backend/app/Http/Controllers/. /var/www/portfolio-backend/app/Http/Controllers/
 
-              # 2. Asegurar permisos iniciales para evitar errores de Log "Permission Denied"
-              sudo chown -R www-data:www-data /var/www/portfolio-backend
-              sudo chmod -R 775 /var/www/portfolio-backend/storage /var/www/portfolio-backend/bootstrap/cache
-              sudo chmod -R 775 /var/www/portfolio-backend/Backend/storage /var/www/portfolio-backend/Backend/bootstrap/cache
+                      # 3. Limpiar cachés
+                      php artisan cache:clear
+                      php artisan config:clear
+                      php artisan route:clear
 
-              # 3. Entramos a la subcarpeta Backend donde Git descarga el código nuevo
-              cd Backend
+                      php artisan config:cache
+                      php artisan route:cache
 
-              # 4. Instalar dependencias y regenerar el mapa de clases (Evita el "Target class does not exist")
-              composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
-              composer dump-autoload
+                      # 4. Permisos finales
+                      sudo chown -R www-data:www-data /var/www/portfolio-backend
+                      sudo chmod -R 775 /var/www/portfolio-backend
+          # 1. Desbloquear Git y traer los cambios de GitHub
 
-              # 5. Limpiar y re-generar cachés en el Laravel actualizado
-              php artisan cache:clear
-              php artisan config:clear
-              php artisan route:clear
-
-              # 6. Ejecutar migraciones y el Seeder con los iconos nuevos sin preguntas interactivas
-              php artisan migrate --force
-              php artisan db:seed --class=SkillSeeder --force
-
-              php artisan config:cache
-              php artisan route:cache
-              php artisan view:cache
-
-              # 7. Permisos finales de seguridad para Nginx en todo el proyecto
-              sudo chown -R www-data:www-data /var/www/portfolio-backend
-              sudo chmod -R 775 /var/www/portfolio-backend
   # -----------------------------------------------------------------
   # TRABAJO 2: DESPLIEGUE DEL FRONTEND (ANGULAR EN S3 + CLOUDFRONT)
   # -----------------------------------------------------------------
