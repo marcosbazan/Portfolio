@@ -13,7 +13,7 @@ class SkillController extends Controller
     public function index(Request $request)
     {
         $lang = $request->header('Accept-Language', 'es');
-        $isEn = str_contains($lang, 'en');
+        $isEn = $request->query('lang') === 'en';
 
         return [
             [
