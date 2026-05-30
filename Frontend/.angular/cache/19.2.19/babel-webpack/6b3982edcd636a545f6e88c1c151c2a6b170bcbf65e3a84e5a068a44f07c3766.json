@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: true,\n  apiUrl: 'https://d2ku2gj092si1i.cloudfront.net/api' // Tu dominio real cuando subas Laravel, también sin barra\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

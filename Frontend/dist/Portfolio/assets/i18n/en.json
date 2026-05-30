@@ -1,0 +1,120 @@
+{
+  "MENU": {
+    "INICIO": "Home",
+    "TECNOLOGIAS": "Skills",
+    "EXPERIENCIA": "Experience",
+    "FORMACION": "Education",
+    "PROYECTOS": "Projects",
+    "EXTRAS": "Extras"
+  },
+    "PROFILES":{
+    "TITLE": "Full Stack Developer | IA Developer | DevOps",
+    "WORK": "Working",
+    "ABOUT": "About me",
+    "TEXT_LIST":[
+      "Hello, I'm Marcos Bazán, a passionate Full Stack developer with experience in AI and a focus on software engineering. I love creating innovative and efficient solutions that enhance user experience.",
+      "My goal is to continue learning and growing in the field of technology, contributing to projects that make a difference.",
+      "I am available to collaborate on exciting projects!"
+    ]
+
+  },
+  "TECNOLOGIAS": {
+    "TITLE": "Technologies",
+    "TOOLS": "Tools"
+  },
+
+  "EXPERIENCIA": {
+    "TITLE": "Experience",
+    "CodeArts-Solution":{
+      "TITLE": "CodeArts Solution",
+      "SUBTITLE":"Full Stack Developer",
+      "DATE": "Nov.2024 - Feb.2025",
+      "TEXT_LIST":[
+      " Developed an application using Drupal 11 for the frontend and Symfony with PHP for the backend.",
+      "Implemented features such as user authentication, data management, creation and customization of modules, themes, and routes."
+    ]
+  }},
+  "LEARNING": {
+  "TITLE": "Education",
+  "CESUR": {
+    "TITLE": "Cesur",
+    "DATE": "Sep.2022 - Jan.2025",
+    "DESC": "Development of Multiplatform Applications."
+  },
+  "SANTAMARIA": {
+    "TITLE": "Santa María de los Apóstoles",
+    "DATE": "Sep.2020 - Jun.2022",
+    "DESC": "Vocational training in microcomputer systems and networks."
+  }
+  },
+"PROYECTOS": {
+  "TITLE": "Projects",
+  "VER_MAS": "Show more",
+  "VER_MENOS": "Show less",
+  "TECNOLOGIAS": "Technologies used",
+  "LIST": {
+    "0": {
+      "TITLE": "Web de Iprprevencion",
+      "DESC": "Laravel web platform for occupational risk management. Features a private client area, certificate verification, and a course catalog via REST API. Built with clean architecture (Repositories/Actions) and automated tests.",      "LINK": "View on Web"
+    },
+    "1": {
+      "TITLE": "Personal Portfolio",
+      "DESC": "Personal portfolio explaining what I've learned and my professional journey as a developer, along with my personal projects and additional information.",
+      "LINK": "View on GitHub"
+    },
+    "2": {
+      "TITLE": "Library",
+      "DESC": "An application developed in Java with Spring Boot aimed at managing a library system: loans, books, users, etc., with a PostgreSQL database.",
+      "LINK": "View on GitHub"
+    },
+    "3": {
+      "TITLE": "Nominator",
+      "DESC": "A desktop application in Python for payroll management, employee onboarding/offboarding, and PDF report generation, with a graphical interface developed in Tkinter and data storage in SQLite.",
+      "LINK": "View on GitHub"
+    },
+    "4": {
+      "TITLE": "Chatbot",
+      "DESC": "The chatbot works by detecting keywords in user inputs and responding based on them. It can serve as a foundation for implementing more advanced natural language processing (NLP) techniques or integrating with more complex models.",
+      "LINK": "View on GitHub"
+    }
+  }
+},
+
+  "EXTRAS": {
+    "TITLE": "Extras",
+    "INTERESTS": {
+      "TITLE": "Interests",
+      "TEXT": "I enjoy learning new technologies and experimenting with personal projects, exploring different programming languages, frameworks, and tools that help me improve my skills as a developer."
+    },
+    "LANGUAGES": {
+      "TITLE": "Languages",
+      "SPANISH": "Spanish",
+      "ENGLISH": "English",
+      "LEVEL": {
+        "SPANISH": "Native",
+        "ENGLISH": "Intermediate level (B2)"
+      }
+    },
+    "EVENTS": "Events",
+    "EVENTS_LIST": [
+      "I participated in DrupalCon 2025 held in Santiago de Compostela.",
+      "I attended the CCN-CERT Cybersecurity Conference 2024 in Madrid.",
+      "I attended t3chfest 2024 in Madrid."
+    ],
+    "RECOGNITIONS": {
+      "TITLE": "Recognitions",
+      "TEXT": "Recognized during my internship for my ability to learn quickly and my willingness to take on new challenges."
+    },
+    "CERTIFICATES": "Certificates",
+    "CERTIFICATES_LIST": [
+      "English for IT 2 – Cisco",
+      "Application development with NodeJs and Express – Openwebinars",
+      "Fundamentals of Angular – Openwebinars"
+    ]
+  },
+    "FOOTER": {
+    "COPY": "© 2025 Marcos Bazán Fernández · All rights reserved."
+  }
+}
+
+
