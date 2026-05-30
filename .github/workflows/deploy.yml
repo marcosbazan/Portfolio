@@ -3,7 +3,7 @@ name: Deploy Portfolio (Frontend & Backend)
 on:
   push:
     branches:
-      - main  # ⚠️ Si tu rama principal en Git se llama 'master', cambia esto por 'master'
+      - master
 
 jobs:
   # -----------------------------------------------------------------
