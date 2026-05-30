@@ -101,7 +101,7 @@ jobs:
 
       - name: Subir archivos limpios a S3
         run: |
-          aws s3 sync Frontend/dist/portafolio s3://${{ secrets.AWS_S3_BUCKET }} --delete
+          aws s3 sync Frontend/dist/Portfolio/browser s3://${{ secrets.AWS_S3_BUCKET }} --delete
 
       - name: Invalidar la caché de CloudFront para ver los cambios ya mismo
         run: |
