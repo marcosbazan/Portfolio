@@ -66,6 +66,7 @@ jobs:
         with:
           fetch-depth: 2
 
+      # 💡 Dejamos este paso aquí para que no de error, pero ya NO bloqueará los pasos de abajo
       - name: Comprobar si hubo cambios en Frontend
         id: check_frontend
         run: |
@@ -76,26 +77,22 @@ jobs:
           fi
 
       - name: Configurar Node.js
-        if: steps.check_frontend.outputs.cambios == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Instalar dependencias de Angular (con pnpm)
-        if: steps.check_frontend.outputs.cambios == 'true'
         run: |
           cd Frontend
           npm install -g pnpm
           pnpm install --frozen-lockfile
 
       - name: Compilar Frontend (ng build)
-        if: steps.check_frontend.outputs.cambios == 'true'
         run: |
           cd Frontend
           pnpm run build
 
       - name: Configurar credenciales de AWS
-        if: steps.check_frontend.outputs.cambios == 'true'
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCES_KEY_ID }}
@@ -103,11 +100,9 @@ jobs:
           aws-region: eu-central-1
 
       - name: Subir archivos limpios a S3
-        if: steps.check_frontend.outputs.cambios == 'true'
         run: |
           aws s3 sync Frontend/dist/portafolio s3://${{ secrets.AWS_S3_BUCKET }} --delete
 
       - name: Invalidar la caché de CloudFront para ver los cambios ya mismo
-        if: steps.check_frontend.outputs.cambios == 'true'
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
