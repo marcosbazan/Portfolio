@@ -1,0 +1,112 @@
+name: Deploy Portfolio (Frontend & Backend)
+
+on:
+  push:
+    branches:
+      - main  # ⚠️ Si tu rama principal en Git se llama 'master', cambia esto por 'master'
+
+jobs:
+  # -----------------------------------------------------------------
+  # TRABAJO 1: DESPLIEGUE DEL BACKEND (LARAVEL EN EC2)
+  # -----------------------------------------------------------------
+  deploy-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Comprobar si hubo cambios en backend
+        id: check_backend
+        run: |
+          if git diff --name-only HEAD~1 | grep -q '^backend/'; then
+            echo "cambios=true" >> $GITHUB_OUTPUT
+          else
+            echo "cambios=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Ejecutar despliegue en EC2 por SSH
+        if: steps.check_backend.outputs.cambios == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            cd /var/www/portfolio-backend
+
+            # 1. Traer los cambios globales del monorrepo
+            sudo git reset --hard origin/main
+            sudo git pull origin main
+
+            # 2. Moverse a la carpeta interna de Laravel
+            cd backend
+
+            # 3. Instalar dependencias y optimizar caché
+            composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+            php artisan migrate --force
+
+            # 4. Asegurar los permisos de Nginx
+            sudo chown -R www-data:www-data /var/www/portfolio-backend
+            sudo chmod -R 775 /var/www/portfolio-backend/backend/storage /var/www/portfolio-backend/backend/bootstrap/cache
+
+  # -----------------------------------------------------------------
+  # TRABAJO 2: DESPLIEGUE DEL FRONTEND (ANGULAR EN S3 + CLOUDFRONT)
+  # -----------------------------------------------------------------
+  deploy-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Comprobar si hubo cambios en frontend
+        id: check_frontend
+        run: |
+          if git diff --name-only HEAD~1 | grep -q '^frontend/'; then
+            echo "cambios=true" >> $GITHUB_OUTPUT
+          else
+            echo "cambios=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Configurar Node.js
+        if: steps.check_frontend.outputs.cambios == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias de Angular
+        if: steps.check_frontend.outputs.cambios == 'true'
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Compilar Frontend (ng build)
+        if: steps.check_frontend.outputs.cambios == 'true'
+        run: |
+          cd frontend
+          npm run build -- --configuration=production
+
+      - name: Configurar credenciales de AWS
+        if: steps.check_frontend.outputs.cambios == 'true'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1  # Fráncfort
+
+      - name: Subir archivos limpios a S3
+        if: steps.check_frontend.outputs.cambios == 'true'
+        run: |
+          aws s3 sync Frontend/dist/portafolio s3://${{ secrets.AWS_S3_BUCKET }} --delete
+
+      - name: Invalidar la caché de CloudFront para ver los cambios ya mismo
+        if: steps.check_frontend.outputs.cambios == 'true'
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
