@@ -38,31 +38,26 @@ jobs:
           script: |
             cd /var/www/portfolio-backend
 
-            # 🎯 1. Forzamos la actualización con tu rama real (master)
-            sudo git fetch origin master
-            sudo git reset --hard origin/master
-            sudo git pull origin master
+             # 1. Forzar actualización con master
+             sudo git fetch origin master
+             sudo git reset --hard origin/master
+             sudo git pull origin master
 
-            # 🎯 2. Moverse a la carpeta interna con la ruta exacta
-            cd Backend
+             # 2. Instalar dependencias y purgar cachés (Sin cambiar de carpeta)
+             composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
-            # 3. Instalar dependencias y purgar cachés a fondo
-            composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+             php artisan cache:clear
+             php artisan config:clear
+             php artisan route:clear
 
-            # Limpieza absoluta de la memoria de Laravel antes de volver a cachear
-            php artisan cache:clear
-            php artisan config:clear
-            php artisan route:clear
+             php artisan config:cache
+             php artisan route:cache
+             php artisan view:cache
+             php artisan migrate --force
 
-            # Re-generamos la caché optimizada para producción
-            php artisan config:cache
-            php artisan route:cache
-            php artisan view:cache
-            php artisan migrate --force
-
-            # 4. Asegurar los permisos correctos para Nginx
-            sudo chown -R www-data:www-data /var/www/portfolio-backend
-            sudo chmod -R 775 /var/www/portfolio-backend
+             # 3. Permisos
+             sudo chown -R www-data:www-data /var/www/portfolio-backend
+             sudo chmod -R 775 /var/www/portfolio-backend
   # -----------------------------------------------------------------
   # TRABAJO 2: DESPLIEGUE DEL FRONTEND (ANGULAR EN S3 + CLOUDFRONT)
   # -----------------------------------------------------------------
