@@ -91,6 +91,14 @@ jobs:
         run: |
           cd Frontend
           pnpm run build
+      - name: 🔍 Ver qué carpetas se han creado en dist
+        run: |
+            echo "=== Contenido de Frontend ==="
+            ls -la Frontend/
+            echo "=== Contenido de Frontend/dist ==="
+            ls -la Frontend/dist/ || echo "No existe dist"
+            echo "=== Buscando dónde están los archivos index.html ==="
+            find Frontend -name "index.html"
 
       - name: Configurar credenciales de AWS
         uses: aws-actions/configure-aws-credentials@v4
