@@ -37,34 +37,9 @@ jobs:
           port: 22
           script: |
             cd /var/www/portfolio-backend
-
-            # 1. Desbloquear Git en el servidor ante posibles conflictos de usuario
-            sudo git config --global --add safe.directory /var/www/portfolio-backend
-
-            # 2. Forzar actualización directa machacando lo viejo con tu rama master
-            sudo git fetch origin master
-            sudo git reset --hard origin/master
-            sudo git pull origin master
-
-            # 3. Hacer que tu usuario "ubuntu" sea dueño temporal para que Composer pueda escribir sin trabas
-            sudo chown -R ubuntu:ubuntu /var/www/portfolio-backend
-
-            # 4. Instalar dependencias de Composer y regenerar mapa de clases en la raíz
-            composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
-            composer dump-autoload
-
-            # 5. Devolver de forma definitiva el control a Nginx sobre todo el proyecto
-            sudo chown -R www-data:www-data /var/www/portfolio-backend
-            sudo chmod -R 775 storage bootstrap/cache
-
-            # 6. Forzar la optimización y el cacheado usando la identidad de Nginx (Evita el Permission Denied)
-            sudo -u www-data php artisan cache:clear
-            sudo -u www-data php artisan config:clear
-            sudo -u www-data php artisan route:clear
-
-            sudo -u www-data php artisan config:cache
-            sudo -u www-data php artisan route:cache
-            sudo -u www-data php artisan view:cache
+            # Le damos permiso de ejecución al script y lo lanzamos
+            chmod +x deploy.sh
+            ./deploy.sh
 
   # -----------------------------------------------------------------
   # TRABAJO 2: DESPLIEGUE DEL FRONTEND (ANGULAR EN S3 + CLOUDFRONT)
